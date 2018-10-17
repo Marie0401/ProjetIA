@@ -49,7 +49,7 @@
             this.btn_InitGrapheDefaut.TabIndex = 0;
             this.btn_InitGrapheDefaut.Text = "Initialisation par défaut";
             this.btn_InitGrapheDefaut.UseVisualStyleBackColor = true;
-            this.btn_InitGrapheDefaut.Click += new System.EventHandler(this.button1_Click);
+            this.btn_InitGrapheDefaut.Click += new System.EventHandler(this.btn_InitGrapheDefaut_Click);
             // 
             // btn_InitGrapheFichier
             // 
@@ -60,6 +60,7 @@
             this.btn_InitGrapheFichier.TabIndex = 1;
             this.btn_InitGrapheFichier.Text = "Initialisation à partir du fichier";
             this.btn_InitGrapheFichier.UseVisualStyleBackColor = true;
+            this.btn_InitGrapheFichier.Click += new System.EventHandler(this.btn_InitGrapheFichier_Click);
             // 
             // btn_RechercheCheminLPCourt
             // 
@@ -70,6 +71,7 @@
             this.btn_RechercheCheminLPCourt.TabIndex = 2;
             this.btn_RechercheCheminLPCourt.Text = "A* ";
             this.btn_RechercheCheminLPCourt.UseVisualStyleBackColor = true;
+            this.btn_RechercheCheminLPCourt.Click += new System.EventHandler(this.btn_RechercheCheminLPCourt_Click);
             // 
             // lbl_NoeudInit
             // 
