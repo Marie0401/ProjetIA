@@ -32,7 +32,7 @@ namespace Pluscourtchemin
                 for (int j = 0; j < nbnodes; j++)
                     matrice[i, j] = -1;
 
-            matrice[0, 1] = 3;   matrice[1, 0] = 3;
+            matrice[0, 1] = 3;      matrice[1, 0] = 3;
             matrice[0, 2] = 5;      matrice[2, 0] = 5;
             matrice[0, 3] = 7;      matrice[3, 0] = 7;
             matrice[1, 4] = 8;      matrice[4, 1] = 8;
@@ -136,6 +136,11 @@ namespace Pluscourtchemin
             monStreamReader.Close();
 
 
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }
