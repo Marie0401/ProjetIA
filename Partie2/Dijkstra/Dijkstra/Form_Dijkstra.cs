@@ -14,7 +14,7 @@ namespace Dijkstra
     {
 
         static public double[,] matrice;  // la matrice qui donne la distance entre les noeuds
-        static public int nbnodes = 10;  // nombre de noeuds dans le graphe
+        static public int nbnoeuds = 10;  // nombre de noeuds dans le graphe
         static public int numinitial;
         static public int numfinal;
 
@@ -25,9 +25,9 @@ namespace Dijkstra
 
         private void btn_InitGrapheDefaut_Click(object sender, EventArgs e)
         {
-            matrice = new double[nbnodes, nbnodes];
-            for (int i = 0; i < nbnodes; i++)
-                for (int j = 0; j < nbnodes; j++)
+            matrice = new double[nbnoeuds, nbnoeuds];
+            for (int i = 0; i < nbnoeuds; i++)
+                for (int j = 0; j < nbnoeuds; j++)
                     matrice[i, j] = -1;
 
             matrice[0, 1] = 3;    matrice[1, 0] = 3;
