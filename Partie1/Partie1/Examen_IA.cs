@@ -16,5 +16,7 @@ namespace Partie1bis
         {
             InitializeComponent();
         }
+
+        
     }
 }
