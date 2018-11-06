@@ -45,8 +45,25 @@ namespace Dijkstra
         }
 
         private void btn_RechercheCheminLPCourt_Click(object sender, EventArgs e)
-        {
+        {/*
+            numinitial = Convert.ToInt32(textBox1.Text);
+            numfinal = Convert.ToInt32(textBox2.Text);
+            SearchTree g = new SearchTree();
+            Node2 N0 = new Node2();
+            N0.numero = numinitial;
+            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
 
+            Node2 N1 = N0;
+            for (int i = 1; i < solution.Count; i++)
+            {
+                Node2 N2 = (Node2)solution[i];
+                listBox1.Items.Add(Convert.ToString(N1.numero)
+                     + "--->" + Convert.ToString(N2.numero)
+                     + "   : " + Convert.ToString(matrice[N1.numero, N2.numero]));
+                N1 = N2;
+            }
+
+            g.GetSearchTree(treeView1);*/
         }
     }
 }
