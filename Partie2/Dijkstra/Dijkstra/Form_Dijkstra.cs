@@ -13,7 +13,7 @@ namespace Dijkstra
     public partial class Form_Dijkstra : Form
     {
 
-        static public double[,] matrice;  // la matrice qui donne la dostance entre les noeuds
+        static public double[,] matrice;  // la matrice qui donne la distance entre les noeuds
         static public int nbnodes = 10;  // nombre de noeuds dans le graphe
         static public int numinitial;
         static public int numfinal;
