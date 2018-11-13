@@ -19,9 +19,8 @@ namespace Partie1bis
 
         private void numQuestionSur20_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int i = 0;         
-
-                Console.Write("Question n°" + i + "/20"); 
+            int i = 0;     
+            Console.Write("Question n°" + i + "/20"); 
         }
 
         private void Examen_IA_Load(object sender, EventArgs e)
@@ -31,11 +30,16 @@ namespace Partie1bis
 
         private void validerRep_Click(object sender, EventArgs e)
         {
+            // Faire une sorte de clear all puis afficher la question selon la liste XML de questions 
             List<string> rep = new List<string>();
             rep.Add("1"); rep.Add("2"); rep.Add("3");
             Question question = new Question("test", 2, rep);
 
             affichageQuestion.Items.Add(question.ToString());
+
+            // Essai d'afficher le numéro de question
+            numQuestionSur20.(question.numeroQuestion);
+
         }
     }
 }

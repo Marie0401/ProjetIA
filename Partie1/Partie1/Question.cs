@@ -60,7 +60,11 @@ namespace Partie1bis
             }
         }
 
-
+        // Methode qui affiche le numéro de la question 
+        public void numeroQuestion(int i)
+        {
+            Console.Write("Question n°" + i + "/20");
+        }
 
 
         /*
