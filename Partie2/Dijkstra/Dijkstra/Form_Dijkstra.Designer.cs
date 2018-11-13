@@ -37,7 +37,7 @@
             this.txtbx_NoeudFinal = new System.Windows.Forms.TextBox();
             this.lstbx_AffichageGrapheFichier = new System.Windows.Forms.ListBox();
             this.listBox_AffichageChemin = new System.Windows.Forms.ListBox();
-            this.listBox_AffichageArbre = new System.Windows.Forms.ListBox();
+            this.tV_AffichageArbre = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
             // btn_InitGrapheDefaut
@@ -97,6 +97,7 @@
             this.txtbx_NoeudInit.Name = "txtbx_NoeudInit";
             this.txtbx_NoeudInit.Size = new System.Drawing.Size(100, 20);
             this.txtbx_NoeudInit.TabIndex = 5;
+            this.txtbx_NoeudInit.Text = "0";
             // 
             // txtbx_NoeudFinal
             // 
@@ -104,6 +105,7 @@
             this.txtbx_NoeudFinal.Name = "txtbx_NoeudFinal";
             this.txtbx_NoeudFinal.Size = new System.Drawing.Size(100, 20);
             this.txtbx_NoeudFinal.TabIndex = 6;
+            this.txtbx_NoeudFinal.Text = "6";
             // 
             // lstbx_AffichageGrapheFichier
             // 
@@ -121,20 +123,19 @@
             this.listBox_AffichageChemin.Size = new System.Drawing.Size(143, 134);
             this.listBox_AffichageChemin.TabIndex = 8;
             // 
-            // listBox_AffichageArbre
+            // tV_AffichageArbre
             // 
-            this.listBox_AffichageArbre.FormattingEnabled = true;
-            this.listBox_AffichageArbre.Location = new System.Drawing.Point(477, 185);
-            this.listBox_AffichageArbre.Name = "listBox_AffichageArbre";
-            this.listBox_AffichageArbre.Size = new System.Drawing.Size(143, 134);
-            this.listBox_AffichageArbre.TabIndex = 9;
+            this.tV_AffichageArbre.Location = new System.Drawing.Point(441, 123);
+            this.tV_AffichageArbre.Name = "tV_AffichageArbre";
+            this.tV_AffichageArbre.Size = new System.Drawing.Size(244, 266);
+            this.tV_AffichageArbre.TabIndex = 9;
             // 
             // Form_Dijkstra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 418);
-            this.Controls.Add(this.listBox_AffichageArbre);
+            this.Controls.Add(this.tV_AffichageArbre);
             this.Controls.Add(this.listBox_AffichageChemin);
             this.Controls.Add(this.lstbx_AffichageGrapheFichier);
             this.Controls.Add(this.txtbx_NoeudFinal);
@@ -162,7 +163,7 @@
         private System.Windows.Forms.TextBox txtbx_NoeudFinal;
         private System.Windows.Forms.ListBox lstbx_AffichageGrapheFichier;
         private System.Windows.Forms.ListBox listBox_AffichageChemin;
-        private System.Windows.Forms.ListBox listBox_AffichageArbre;
+        private System.Windows.Forms.TreeView tV_AffichageArbre;
     }
 }
 
