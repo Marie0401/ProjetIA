@@ -34,10 +34,7 @@
             this.numQuestionSur20 = new System.Windows.Forms.ListBox();
             this.affichagePropositionReponses = new System.Windows.Forms.ListBox();
             this.reponses = new System.Windows.Forms.Label();
-            this.radioButtonRepA = new System.Windows.Forms.RadioButton();
-            this.radioButtonRepB = new System.Windows.Forms.RadioButton();
-            this.radioButtonRepC = new System.Windows.Forms.RadioButton();
-            this.radioButtonRepD = new System.Windows.Forms.RadioButton();
+            this.comboBoxChoixRep = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // question
@@ -73,6 +70,7 @@
             this.numQuestionSur20.Name = "numQuestionSur20";
             this.numQuestionSur20.Size = new System.Drawing.Size(98, 30);
             this.numQuestionSur20.TabIndex = 4;
+            this.numQuestionSur20.SelectedIndexChanged += new System.EventHandler(this.numQuestionSur20_SelectedIndexChanged);
             // 
             // affichagePropositionReponses
             // 
@@ -91,59 +89,20 @@
             this.reponses.TabIndex = 6;
             this.reponses.Text = "Choix de réponse : ";
             // 
-            // radioButtonRepA
+            // comboBoxChoixRep
             // 
-            this.radioButtonRepA.AutoSize = true;
-            this.radioButtonRepA.Location = new System.Drawing.Point(68, 343);
-            this.radioButtonRepA.Name = "radioButtonRepA";
-            this.radioButtonRepA.Size = new System.Drawing.Size(81, 17);
-            this.radioButtonRepA.TabIndex = 10;
-            this.radioButtonRepA.TabStop = true;
-            this.radioButtonRepA.Text = "Réponse A ";
-            this.radioButtonRepA.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonRepB
-            // 
-            this.radioButtonRepB.AutoSize = true;
-            this.radioButtonRepB.Location = new System.Drawing.Point(259, 343);
-            this.radioButtonRepB.Name = "radioButtonRepB";
-            this.radioButtonRepB.Size = new System.Drawing.Size(78, 17);
-            this.radioButtonRepB.TabIndex = 11;
-            this.radioButtonRepB.TabStop = true;
-            this.radioButtonRepB.Text = "Réponse B";
-            this.radioButtonRepB.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonRepC
-            // 
-            this.radioButtonRepC.AutoSize = true;
-            this.radioButtonRepC.Location = new System.Drawing.Point(68, 383);
-            this.radioButtonRepC.Name = "radioButtonRepC";
-            this.radioButtonRepC.Size = new System.Drawing.Size(81, 17);
-            this.radioButtonRepC.TabIndex = 12;
-            this.radioButtonRepC.TabStop = true;
-            this.radioButtonRepC.Text = "Réponse C ";
-            this.radioButtonRepC.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonRepD
-            // 
-            this.radioButtonRepD.AutoSize = true;
-            this.radioButtonRepD.Location = new System.Drawing.Point(256, 383);
-            this.radioButtonRepD.Name = "radioButtonRepD";
-            this.radioButtonRepD.Size = new System.Drawing.Size(102, 17);
-            this.radioButtonRepD.TabIndex = 13;
-            this.radioButtonRepD.TabStop = true;
-            this.radioButtonRepD.Text = "D, la réponse D ";
-            this.radioButtonRepD.UseVisualStyleBackColor = true;
+            this.comboBoxChoixRep.FormattingEnabled = true;
+            this.comboBoxChoixRep.Location = new System.Drawing.Point(71, 338);
+            this.comboBoxChoixRep.Name = "comboBoxChoixRep";
+            this.comboBoxChoixRep.Size = new System.Drawing.Size(116, 21);
+            this.comboBoxChoixRep.TabIndex = 15;
             // 
             // Examen_IA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 462);
-            this.Controls.Add(this.radioButtonRepD);
-            this.Controls.Add(this.radioButtonRepC);
-            this.Controls.Add(this.radioButtonRepB);
-            this.Controls.Add(this.radioButtonRepA);
+            this.Controls.Add(this.comboBoxChoixRep);
             this.Controls.Add(this.reponses);
             this.Controls.Add(this.affichagePropositionReponses);
             this.Controls.Add(this.numQuestionSur20);
@@ -165,10 +124,7 @@
         private System.Windows.Forms.ListBox numQuestionSur20;
         private System.Windows.Forms.ListBox affichagePropositionReponses;
         private System.Windows.Forms.Label reponses;
-        private System.Windows.Forms.RadioButton radioButtonRepA;
-        private System.Windows.Forms.RadioButton radioButtonRepB;
-        private System.Windows.Forms.RadioButton radioButtonRepC;
-        private System.Windows.Forms.RadioButton radioButtonRepD;
+        private System.Windows.Forms.ComboBox comboBoxChoixRep;
     }
 }
 

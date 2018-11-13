@@ -17,6 +17,11 @@ namespace Partie1bis
             InitializeComponent();
         }
 
-        
+        private void numQuestionSur20_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = 0;         
+
+                Console.Write("Question n°" + i + "/20"); 
+        }
     }
 }
