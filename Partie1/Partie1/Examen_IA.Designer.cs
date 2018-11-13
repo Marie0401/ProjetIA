@@ -62,6 +62,7 @@
             this.validerRep.TabIndex = 2;
             this.validerRep.Text = "Valider la réponse";
             this.validerRep.UseVisualStyleBackColor = true;
+            this.validerRep.Click += new System.EventHandler(this.validerRep_Click);
             // 
             // numQuestionSur20
             // 
@@ -111,6 +112,7 @@
             this.Controls.Add(this.question);
             this.Name = "Examen_IA";
             this.Text = "Examen d\'IA";
+            this.Load += new System.EventHandler(this.Examen_IA_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
