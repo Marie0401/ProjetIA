@@ -38,7 +38,7 @@ namespace Partie1bis
             affichageQuestion.Items.Add(question.ToString());
 
             // Essai d'afficher le numéro de question
-            numQuestionSur20.(question.numeroQuestion);
+            //numQuestionSur20.(question.numeroQuestion);
 
         }
     }
