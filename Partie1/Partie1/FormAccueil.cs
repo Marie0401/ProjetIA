@@ -17,7 +17,7 @@ namespace Partie1bis
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)         // Erreur de click 
         {
 
         }

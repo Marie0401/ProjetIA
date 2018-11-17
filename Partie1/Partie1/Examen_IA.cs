@@ -12,16 +12,27 @@ namespace Partie1bis
 {
     public partial class Examen_IA : Form
     {
+        int compteur = 0;
+
         public Examen_IA()
         {
             InitializeComponent();
+            numQuestionSur20.Text = numQuestionSur20_Affichage(); 
+
         }
 
-        private void numQuestionSur20_SelectedIndexChanged(object sender, EventArgs e)
+        private void numQuestionSur20_SelectedIndexChanged(object sender, EventArgs e)                   // Encore une fonction qui ne sert à rien 
         {
-            int i = 0;     
-            Console.Write("Question n°" + i + "/20"); 
+
         }
+
+        public string numQuestionSur20_Affichage ()                                                      // Par contre celle là sert (pas encore ...) 
+        {
+            string numQuest = ("Question n°" + compteur + "/20");
+            return numQuest; 
+        }
+
+
 
         private void Examen_IA_Load(object sender, EventArgs e)
         {
