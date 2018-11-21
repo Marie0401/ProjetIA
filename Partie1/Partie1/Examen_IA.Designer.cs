@@ -31,10 +31,10 @@
             this.question = new System.Windows.Forms.Label();
             this.affichageQuestion = new System.Windows.Forms.ListBox();
             this.validerRep = new System.Windows.Forms.Button();
-            this.numQuestionSur20 = new System.Windows.Forms.ListBox();
             this.affichagePropositionReponses = new System.Windows.Forms.ListBox();
             this.reponses = new System.Windows.Forms.Label();
             this.comboBoxChoixRep = new System.Windows.Forms.ComboBox();
+            this.lblNumQuestion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // question
@@ -64,15 +64,6 @@
             this.validerRep.UseVisualStyleBackColor = true;
             this.validerRep.Click += new System.EventHandler(this.validerRep_Click);
             // 
-            // numQuestionSur20
-            // 
-            this.numQuestionSur20.FormattingEnabled = true;
-            this.numQuestionSur20.Location = new System.Drawing.Point(474, 53);
-            this.numQuestionSur20.Name = "numQuestionSur20";
-            this.numQuestionSur20.Size = new System.Drawing.Size(98, 30);
-            this.numQuestionSur20.TabIndex = 4;
-            this.numQuestionSur20.SelectedIndexChanged += new System.EventHandler(this.numQuestionSur20_SelectedIndexChanged);
-            // 
             // affichagePropositionReponses
             // 
             this.affichagePropositionReponses.FormattingEnabled = true;
@@ -98,15 +89,24 @@
             this.comboBoxChoixRep.Size = new System.Drawing.Size(116, 21);
             this.comboBoxChoixRep.TabIndex = 15;
             // 
+            // lblNumQuestion
+            // 
+            this.lblNumQuestion.AutoSize = true;
+            this.lblNumQuestion.Location = new System.Drawing.Point(489, 65);
+            this.lblNumQuestion.Name = "lblNumQuestion";
+            this.lblNumQuestion.Size = new System.Drawing.Size(83, 13);
+            this.lblNumQuestion.TabIndex = 16;
+            this.lblNumQuestion.Text = "numQuestSur20";
+            // 
             // Examen_IA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 462);
+            this.Controls.Add(this.lblNumQuestion);
             this.Controls.Add(this.comboBoxChoixRep);
             this.Controls.Add(this.reponses);
             this.Controls.Add(this.affichagePropositionReponses);
-            this.Controls.Add(this.numQuestionSur20);
             this.Controls.Add(this.validerRep);
             this.Controls.Add(this.affichageQuestion);
             this.Controls.Add(this.question);
@@ -123,10 +123,10 @@
         private System.Windows.Forms.Label question;
         private System.Windows.Forms.ListBox affichageQuestion;
         private System.Windows.Forms.Button validerRep;
-        private System.Windows.Forms.ListBox numQuestionSur20;
         private System.Windows.Forms.ListBox affichagePropositionReponses;
         private System.Windows.Forms.Label reponses;
         private System.Windows.Forms.ComboBox comboBoxChoixRep;
+        private System.Windows.Forms.Label lblNumQuestion;
     }
 }
 

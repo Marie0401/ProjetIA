@@ -34,7 +34,7 @@
             // 
             // btnCommencerTest
             // 
-            this.btnCommencerTest.Location = new System.Drawing.Point(218, 279);
+            this.btnCommencerTest.Location = new System.Drawing.Point(203, 267);
             this.btnCommencerTest.Name = "btnCommencerTest";
             this.btnCommencerTest.Size = new System.Drawing.Size(246, 70);
             this.btnCommencerTest.TabIndex = 0;
@@ -45,13 +45,12 @@
             // lblPhraseAccueil
             // 
             this.lblPhraseAccueil.AutoSize = true;
-            this.lblPhraseAccueil.Location = new System.Drawing.Point(58, 143);
+            this.lblPhraseAccueil.Location = new System.Drawing.Point(58, 154);
             this.lblPhraseAccueil.Name = "lblPhraseAccueil";
             this.lblPhraseAccueil.Size = new System.Drawing.Size(540, 13);
             this.lblPhraseAccueil.TabIndex = 1;
             this.lblPhraseAccueil.Text = "Bonjour ! Bienvenue à cet examen d\'intelligence artificielle.  20 questions vont " +
     "vous être posées. Êtes vous prêt ?";
-            this.lblPhraseAccueil.Click += new System.EventHandler(this.label1_Click);
             // 
             // FormAccueil
             // 

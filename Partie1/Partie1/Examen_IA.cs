@@ -17,16 +17,11 @@ namespace Partie1bis
         public Examen_IA()
         {
             InitializeComponent();
-            numQuestionSur20.Text = numQuestionSur20_Affichage(); 
+            lblNumQuestion.Text = numQuestionSur20_Affichage(); 
 
         }
 
-        private void numQuestionSur20_SelectedIndexChanged(object sender, EventArgs e)                   // Encore une fonction qui ne sert à rien 
-        {
-
-        }
-
-        public string numQuestionSur20_Affichage ()                                                      // Par contre celle là sert (pas encore ...) 
+        public string numQuestionSur20_Affichage ()                                                     // Affiche la progression sur les 20 questions posées
         {
             string numQuest = ("Question n°" + compteur + "/20");
             return numQuest; 
@@ -47,9 +42,6 @@ namespace Partie1bis
             Question question = new Question("test", 2, rep);
 
             affichageQuestion.Items.Add(question.ToString());
-
-            // Essai d'afficher le numéro de question
-            //numQuestionSur20.(question.numeroQuestion);
 
         }
     }
