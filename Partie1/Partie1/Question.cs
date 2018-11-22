@@ -55,6 +55,15 @@ namespace Partie1bis
             return questionAffichee;
         }
 
+        public void affichageReponses ()                       // Il faudrait qu'on retourne un string pour pouvoir utiliser cette fonction pour l'affichage des réponses 
+        {
+            foreach (string rep in reponses)
+            {
+                Console.WriteLine(rep); 
+            }
+                  
+        }
+
 
     }
 }

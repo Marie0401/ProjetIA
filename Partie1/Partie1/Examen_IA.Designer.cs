@@ -28,31 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.question = new System.Windows.Forms.Label();
-            this.affichageQuestion = new System.Windows.Forms.ListBox();
+            this.titre = new System.Windows.Forms.Label();
             this.validerRep = new System.Windows.Forms.Button();
             this.affichagePropositionReponses = new System.Windows.Forms.ListBox();
             this.reponses = new System.Windows.Forms.Label();
             this.comboBoxChoixRep = new System.Windows.Forms.ComboBox();
             this.lblNumQuestion = new System.Windows.Forms.Label();
+            this.lblAffichageQuestion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // question
+            // titre
             // 
-            this.question.AutoSize = true;
-            this.question.Location = new System.Drawing.Point(232, 26);
-            this.question.Name = "question";
-            this.question.Size = new System.Drawing.Size(144, 13);
-            this.question.TabIndex = 0;
-            this.question.Text = "Examen d\'IA - bon courage ! ";
-            // 
-            // affichageQuestion
-            // 
-            this.affichageQuestion.FormattingEnabled = true;
-            this.affichageQuestion.Location = new System.Drawing.Point(68, 107);
-            this.affichageQuestion.Name = "affichageQuestion";
-            this.affichageQuestion.Size = new System.Drawing.Size(504, 43);
-            this.affichageQuestion.TabIndex = 1;
+            this.titre.AutoSize = true;
+            this.titre.Location = new System.Drawing.Point(232, 26);
+            this.titre.Name = "titre";
+            this.titre.Size = new System.Drawing.Size(144, 13);
+            this.titre.TabIndex = 0;
+            this.titre.Text = "Examen d\'IA - bon courage ! ";
             // 
             // validerRep
             // 
@@ -98,18 +90,27 @@
             this.lblNumQuestion.TabIndex = 16;
             this.lblNumQuestion.Text = "numQuestSur20";
             // 
+            // lblAffichageQuestion
+            // 
+            this.lblAffichageQuestion.AutoSize = true;
+            this.lblAffichageQuestion.Location = new System.Drawing.Point(68, 118);
+            this.lblAffichageQuestion.Name = "lblAffichageQuestion";
+            this.lblAffichageQuestion.Size = new System.Drawing.Size(104, 13);
+            this.lblAffichageQuestion.TabIndex = 17;
+            this.lblAffichageQuestion.Text = "lblAffichageQuestion";
+            // 
             // Examen_IA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 462);
+            this.Controls.Add(this.lblAffichageQuestion);
             this.Controls.Add(this.lblNumQuestion);
             this.Controls.Add(this.comboBoxChoixRep);
             this.Controls.Add(this.reponses);
             this.Controls.Add(this.affichagePropositionReponses);
             this.Controls.Add(this.validerRep);
-            this.Controls.Add(this.affichageQuestion);
-            this.Controls.Add(this.question);
+            this.Controls.Add(this.titre);
             this.Name = "Examen_IA";
             this.Text = "Examen d\'IA";
             this.Load += new System.EventHandler(this.Examen_IA_Load);
@@ -120,13 +121,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label question;
-        private System.Windows.Forms.ListBox affichageQuestion;
+        private System.Windows.Forms.Label titre;
         private System.Windows.Forms.Button validerRep;
         private System.Windows.Forms.ListBox affichagePropositionReponses;
         private System.Windows.Forms.Label reponses;
         private System.Windows.Forms.ComboBox comboBoxChoixRep;
         private System.Windows.Forms.Label lblNumQuestion;
+        private System.Windows.Forms.Label lblAffichageQuestion;
     }
 }
 
