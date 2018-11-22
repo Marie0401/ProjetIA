@@ -12,7 +12,8 @@ namespace Partie1bis
 {
     public partial class Examen_IA : Form
     {
-        List<Question> questions = new List<Question>(); 
+        private List<Question> questions = new List<Question>();
+        private Question question = new Question(); 
         int compteur = 1;
 
         
@@ -23,7 +24,8 @@ namespace Partie1bis
             lblNumQuestion.Text = numQuestionSur20_Affichage();
             questions = serializeQuestions();
             deserializeQuestions(questions);
-            lblAffichageQuestion.Text = methodeTestPourAvoirUneQuestion(); 
+            lblAffichageQuestion.Text = methodeTestPourAvoirUneQuestion();
+             
 
 
 
@@ -42,13 +44,13 @@ namespace Partie1bis
 
         }
 
-        public List<Question> serializeQuestions()
+        public List<Question> serializeQuestions()            // On commence tranquillou avec deux questions pour voir si ça fonctionne 
         {
             List<string> reponsesQ1 = new List<string> { "3", "6", "7" };
             List<string> reponsesQ2 = new List<string> { "rep", "rep2", "rep3" };
             
 
-            Question question1 = new Question("Combien de degrés de liberté sont nécessaires pour permettre à un bras UR3 de se positionner,\n de s’orienter et d’attraper un objet ?", 2, reponsesQ1);
+            Question question1 = new Question("Combien de degrés de liberté sont nécessaires pour permettre à un bras UR3 de se positionner, de s’orienter et d’attraper un objet ?", 2, reponsesQ1);
             Question question2 = new Question("Comment peut-on définir la cinématique inverse ?", 0, reponsesQ2);
             
 
@@ -61,7 +63,7 @@ namespace Partie1bis
         }
 
 
-        public void deserializeQuestions(List<Question> questions)  // Ca c'est bon, permet de déserializer le fichier XML et de mettre le résultat dans une liste de questions
+        public void deserializeQuestions(List<Question> questions)
         {
             questions = QuestionXML.CreerAPartirDuFichier("ceciEstUnFichierXML.xml");
         }
@@ -78,10 +80,10 @@ namespace Partie1bis
 
         }
 
-        public string methodeTestPourAvoirUneQuestion()         // Ceci est une méthode test vouée à disparaitre 
+        public string methodeTestPourAvoirUneQuestion()         // Ceci est une méthode test vouée à disparaitre, paske tu voulais juster tester la l.26 de ce code 
         {
             List<string> rep = new List<string> { "3", "6", "7" };
-            Question question = new Question("Combien de degrés de liberté sont nécessaires pour permettre à un bras UR3 de se positionner, de s’orienter et d’attraper un objet ?", 2, rep);
+            Question question = new Question("Combien de degrés de liberté sont nécessaires pour permettre à un bras UR3 de se positionner,\n de s’orienter et d’attraper un objet ?", 2, rep);
 
             return question.ToString(); 
         }
