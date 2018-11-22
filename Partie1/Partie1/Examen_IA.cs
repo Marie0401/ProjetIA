@@ -21,7 +21,7 @@ namespace Partie1bis
 
         }
 
-        public string numQuestionSur20_Affichage ()                                                     // Affiche la progression sur les 20 questions posées
+        public string numQuestionSur20_Affichage ()                                // Affiche la progression sur les 20 questions posées
         {
             string numQuest = ("Question n°" + compteur + "/20");
             return numQuest; 
@@ -39,9 +39,10 @@ namespace Partie1bis
             // Faire une sorte de clear all puis afficher la question selon la liste XML de questions 
             List<string> rep = new List<string>();
             rep.Add("1"); rep.Add("2"); rep.Add("3");
-            Question question = new Question("test", 2, rep);
+            Question question = new Question("Combien de degrés de liberté sont nécessaires pour permettre à un bras UR3 de se positionner, de s’orienter et d’attraper un objet ?", 2, rep);
 
             affichageQuestion.Items.Add(question.ToString());
+            affichagePropositionReponses.Items.Add(question.reponses); 
 
         }
     }
