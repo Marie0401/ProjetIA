@@ -71,14 +71,14 @@ namespace Partie1bis
         }
 
 
-        public void choixQuestionAuHasard()                                   // A revérifier une fois toutes les questions rentrées mais ça à l'air de fonctionner  
+        public void choixQuestionAuHasard()                                   // A revérifier une fois toutes les questions rentrées mais ça a l'air de fonctionner  
         {
             bool boucle = true;
             Random aleatoire = new Random();
             int numQuest = 0;
             while (boucle == true)
             {
-                numQuest = aleatoire.Next(0, questions.Count());              // Pas de changement entre le question.Count et le question.Count + 1,
+                numQuest = aleatoire.Next(0, questions.Count());              // Pas de changement entre le question.Count et le question.Count + 1, pourtant 
                                                                               // il a l'air de ne jamais afficher la dernière question de la liste
                 if (questions[numQuest].dejaChoisie == true)
                 {
@@ -108,6 +108,10 @@ namespace Partie1bis
             else
             {
                 lblPasDeRepSelectionnee.Visible = false;
+                // COder si la réponse choisie est bonne 
+                gpbxReponse.Visible = true;
+                btnQuestionSuivante.Visible = true;
+                btnValiderRep.Visible = false;
 
 
             }

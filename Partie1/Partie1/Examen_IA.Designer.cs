@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.titre = new System.Windows.Forms.Label();
-            this.validerRep = new System.Windows.Forms.Button();
+            this.btnValiderRep = new System.Windows.Forms.Button();
             this.lblNumQuestion = new System.Windows.Forms.Label();
             this.lblAffichageQuestion = new System.Windows.Forms.Label();
             this.affichagePropositionReponses = new System.Windows.Forms.GroupBox();
@@ -38,7 +38,12 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.lblPasDeRepSelectionnee = new System.Windows.Forms.Label();
+            this.gpbxReponse = new System.Windows.Forms.GroupBox();
+            this.lblScoreTotal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnQuestionSuivante = new System.Windows.Forms.Button();
             this.affichagePropositionReponses.SuspendLayout();
+            this.gpbxReponse.SuspendLayout();
             this.SuspendLayout();
             // 
             // titre
@@ -50,15 +55,15 @@
             this.titre.TabIndex = 0;
             this.titre.Text = "Examen d\'IA - bon courage ! ";
             // 
-            // validerRep
+            // btnValiderRep
             // 
-            this.validerRep.Location = new System.Drawing.Point(470, 353);
-            this.validerRep.Name = "validerRep";
-            this.validerRep.Size = new System.Drawing.Size(102, 40);
-            this.validerRep.TabIndex = 2;
-            this.validerRep.Text = "Valider la réponse";
-            this.validerRep.UseVisualStyleBackColor = true;
-            this.validerRep.Click += new System.EventHandler(this.validerRep_Click);
+            this.btnValiderRep.Location = new System.Drawing.Point(461, 445);
+            this.btnValiderRep.Name = "btnValiderRep";
+            this.btnValiderRep.Size = new System.Drawing.Size(111, 55);
+            this.btnValiderRep.TabIndex = 2;
+            this.btnValiderRep.Text = "Valider la réponse";
+            this.btnValiderRep.UseVisualStyleBackColor = true;
+            this.btnValiderRep.Click += new System.EventHandler(this.validerRep_Click);
             // 
             // lblNumQuestion
             // 
@@ -139,7 +144,7 @@
             // 
             this.lblPasDeRepSelectionnee.AutoSize = true;
             this.lblPasDeRepSelectionnee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lblPasDeRepSelectionnee.ForeColor = System.Drawing.Color.Red;
+            this.lblPasDeRepSelectionnee.ForeColor = System.Drawing.Color.Black;
             this.lblPasDeRepSelectionnee.Location = new System.Drawing.Point(112, 318);
             this.lblPasDeRepSelectionnee.MinimumSize = new System.Drawing.Size(120, 10);
             this.lblPasDeRepSelectionnee.Name = "lblPasDeRepSelectionnee";
@@ -149,22 +154,66 @@
     "r. ";
             this.lblPasDeRepSelectionnee.Visible = false;
             // 
+            // gpbxReponse
+            // 
+            this.gpbxReponse.Controls.Add(this.label1);
+            this.gpbxReponse.Location = new System.Drawing.Point(71, 373);
+            this.gpbxReponse.Name = "gpbxReponse";
+            this.gpbxReponse.Size = new System.Drawing.Size(501, 65);
+            this.gpbxReponse.TabIndex = 20;
+            this.gpbxReponse.TabStop = false;
+            this.gpbxReponse.Text = "Bonne réponse : ";
+            this.gpbxReponse.Visible = false;
+            // 
+            // lblScoreTotal
+            // 
+            this.lblScoreTotal.AutoSize = true;
+            this.lblScoreTotal.Location = new System.Drawing.Point(71, 64);
+            this.lblScoreTotal.Name = "lblScoreTotal";
+            this.lblScoreTotal.Size = new System.Drawing.Size(33, 13);
+            this.lblScoreTotal.TabIndex = 21;
+            this.lblScoreTotal.Text = "score";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "lblBonneReponse";
+            // 
+            // btnQuestionSuivante
+            // 
+            this.btnQuestionSuivante.Location = new System.Drawing.Point(235, 445);
+            this.btnQuestionSuivante.Name = "btnQuestionSuivante";
+            this.btnQuestionSuivante.Size = new System.Drawing.Size(124, 55);
+            this.btnQuestionSuivante.TabIndex = 22;
+            this.btnQuestionSuivante.Text = "Question suivante ";
+            this.btnQuestionSuivante.UseVisualStyleBackColor = true;
+            this.btnQuestionSuivante.Visible = false;
+            // 
             // Examen_IA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 462);
+            this.ClientSize = new System.Drawing.Size(647, 575);
+            this.Controls.Add(this.btnQuestionSuivante);
+            this.Controls.Add(this.lblScoreTotal);
+            this.Controls.Add(this.gpbxReponse);
             this.Controls.Add(this.lblPasDeRepSelectionnee);
             this.Controls.Add(this.affichagePropositionReponses);
             this.Controls.Add(this.lblAffichageQuestion);
             this.Controls.Add(this.lblNumQuestion);
-            this.Controls.Add(this.validerRep);
+            this.Controls.Add(this.btnValiderRep);
             this.Controls.Add(this.titre);
             this.Name = "Examen_IA";
             this.Text = "Examen d\'IA";
             this.Load += new System.EventHandler(this.Examen_IA_Load);
             this.affichagePropositionReponses.ResumeLayout(false);
             this.affichagePropositionReponses.PerformLayout();
+            this.gpbxReponse.ResumeLayout(false);
+            this.gpbxReponse.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,7 +222,7 @@
         #endregion
 
         private System.Windows.Forms.Label titre;
-        private System.Windows.Forms.Button validerRep;
+        private System.Windows.Forms.Button btnValiderRep;
         private System.Windows.Forms.Label lblNumQuestion;
         private System.Windows.Forms.Label lblAffichageQuestion;
         private System.Windows.Forms.GroupBox affichagePropositionReponses;
@@ -182,6 +231,10 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label lblPasDeRepSelectionnee;
+        private System.Windows.Forms.GroupBox gpbxReponse;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblScoreTotal;
+        private System.Windows.Forms.Button btnQuestionSuivante;
     }
 }
 
