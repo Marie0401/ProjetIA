@@ -14,9 +14,12 @@ namespace Partie1bis
         public static int id;
         public string intitule;
         public int bonneReponse;                     // entier compris entre 0 et 3 et associé à une bonne réponse a, b, c, ou d.  
-        public List<string> reponses; 
+        public string[] reponses;
+        public bool dejaChoisie = false; 
 
         // ACCESSEURS
+        public int Id { get; set; }
+
         public string Intitule
         {
             get { return intitule; }
@@ -28,10 +31,16 @@ namespace Partie1bis
             get { return BonneReponse; }
         }
 
-        public List<String> Reponses
+        public string [] Reponses
         {
             get { return reponses; }
             set { reponses = value; }
+        }
+
+        public bool DejaChoisi
+        {
+            get { return dejaChoisie; }
+            set { dejaChoisie = value;}
         }
 
 
@@ -39,7 +48,7 @@ namespace Partie1bis
         public Question()                            // Constructeur public et sans argument : permet la désérialisation 
         { }
 
-        public Question(string intituleQuestion, int bonneRep, List<string> reps)   
+        public Question(string intituleQuestion, int bonneRep, string [] reps)   
         {
             this.intitule = intituleQuestion;
             this.bonneReponse = bonneRep;
@@ -55,14 +64,14 @@ namespace Partie1bis
             return questionAffichee;
         }
 
-        public void affichageReponses ()                       // Il faudrait qu'on retourne un string pour pouvoir utiliser cette fonction pour l'affichage des réponses 
+        /*public void affichageReponses ()           // Il faudrait qu'on retourne un string pour pouvoir utiliser cette fonction pour l'affichage des réponses 
         {
             foreach (string rep in reponses)
             {
                 Console.WriteLine(rep); 
             }
                   
-        }
+        }*/
 
 
     }

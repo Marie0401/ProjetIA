@@ -23,11 +23,10 @@ namespace Partie1bis
             InitializeComponent();
             lblNumQuestion.Text = numQuestionSur20_Affichage();
             questions = serializeQuestions();
-            deserializeQuestions(questions);
-            lblAffichageQuestion.Text = methodeTestPourAvoirUneQuestion();
-             
-
-
+            deserializeQuestions(questions); 
+            choixQuestionAuHasard();
+            lblAffichageQuestion.Text = question.ToString();
+            methodePourAfficherlesReponses(question); 
 
         }
 
@@ -39,19 +38,22 @@ namespace Partie1bis
 
 
 
-        private void Examen_IA_Load(object sender, EventArgs e)
+        private void Examen_IA_Load(object sender, EventArgs e)             // Erreur de clic 
         {
-
+            // affichageQuestion.Items.Add(question.ToString());            // Façon d'afficher dans des listBox 
         }
 
         public List<Question> serializeQuestions()            // On commence tranquillou avec deux questions pour voir si ça fonctionne 
         {
-            List<string> reponsesQ1 = new List<string> { "3", "6", "7" };
-            List<string> reponsesQ2 = new List<string> { "rep", "rep2", "rep3" };
+            string[] reponsesQ1 = new string [] { "3", "6", "7" };
+            string[] reponsesQ2 = new string[] { "rep", "rep2", "rep3" };
+            string[] reponsesQ3 = new string[] { "reponse1", "reponse2", "reponse3" };
             
 
-            Question question1 = new Question("Combien de degrés de liberté sont nécessaires pour permettre à un bras UR3 de se positionner, de s’orienter et d’attraper un objet ?", 2, reponsesQ1);
+
+            Question question1 = new Question("Combien de degrés de liberté sont nécessaires pour permettre à un bras UR3 de se positionner,\n de s’orienter et d’attraper un objet ?", 2, reponsesQ1);
             Question question2 = new Question("Comment peut-on définir la cinématique inverse ?", 0, reponsesQ2);
+            Question question3 = new Question("Qu’est-ce que l’intelligence artificielle ?", 1, reponsesQ3); 
             
 
             List<Question> questions = new List<Question>();
@@ -69,25 +71,89 @@ namespace Partie1bis
         }
 
 
+        public void choixQuestionAuHasard()                                   // A revérifier une fois toutes les questions rentrées mais ça à l'air de fonctionner  
+        {
+            bool boucle = true;
+            Random aleatoire = new Random();
+            int numQuest = 0;
+            while (boucle == true)
+            {
+                numQuest = aleatoire.Next(0, questions.Count());              // Pas de changement entre le question.Count et le question.Count + 1,
+                                                                              // il a l'air de ne jamais afficher la dernière question de la liste
+                if (questions[numQuest].dejaChoisie == true)
+                {
+                    numQuest = aleatoire.Next(0, questions.Count());
+                }
+                else
+                {
+                    boucle = false;
+                    question = questions[numQuest];
+                    question.dejaChoisie = true;
+                    compteur++;
+
+                }
+            }
+
+        }
+
+
+
         private void validerRep_Click(object sender, EventArgs e)
         {
-            // Faire une sorte de clear all puis afficher la question selon la liste XML de questions 
-            List<string> rep = new List<string>();
-            rep.Add("1"); rep.Add("2"); rep.Add("3");
-            Question question = new Question("Combien de degrés de liberté sont nécessaires pour permettre à un bras UR3 de se positionner, de s’orienter et d’attraper un objet ?", 2, rep);
+            if (radioButton0.Checked == false || radioButton1.Checked == false || radioButton2.Checked == false || radioButton3.Checked == false)
+            {
 
-            // affichageQuestion.Items.Add(question.ToString());
+                lblPasDeRepSelectionnee.Visible = true;
+            }
+            else
+            {
+                lblPasDeRepSelectionnee.Visible = false;
 
-        }
 
-        public string methodeTestPourAvoirUneQuestion()         // Ceci est une méthode test vouée à disparaitre, paske tu voulais juster tester la l.26 de ce code 
-        {
-            List<string> rep = new List<string> { "3", "6", "7" };
-            Question question = new Question("Combien de degrés de liberté sont nécessaires pour permettre à un bras UR3 de se positionner,\n de s’orienter et d’attraper un objet ?", 2, rep);
-
-            return question.ToString(); 
+            }
         }
 
 
+
+        public void methodePourAfficherlesReponses (Question question)          // Ce n'est peut-être pas optimal mais ça permet d'utiliser les  
+        {                                                                       // radioButton (une seule bonne réponse possible)
+            radioButton0.Visible = true; 
+            radioButton1.Visible = true;
+            radioButton2.Visible = true;
+            radioButton3.Visible = true;
+
+
+            if (question.reponses.Length == 1)
+            {
+                radioButton0.Text = question.reponses[0];
+                radioButton1.Visible = false;
+                radioButton2.Visible = false;
+                radioButton3.Visible = false;
+            }
+
+            else if (question.reponses.Length == 2)
+            {
+                radioButton0.Text = question.reponses[0];
+                radioButton1.Text = question.reponses[1];
+                radioButton2.Visible = false;
+                radioButton3.Visible = false;
+            }
+            else if (question.reponses.Length == 3)
+            {
+                radioButton0.Text = question.reponses[0];
+                radioButton1.Text = question.reponses[1];
+                radioButton2.Text = question.reponses[2];
+                radioButton3.Visible = false;
+            }
+
+            else if (question.reponses.Length == 4)
+            {
+                radioButton0.Text = question.reponses[0];
+                radioButton1.Text = question.reponses[1];
+                radioButton2.Text = question.reponses[2];
+                radioButton3.Text = question.reponses[3];
+            }
+            
+        }
     }
 }
