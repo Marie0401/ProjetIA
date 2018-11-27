@@ -39,8 +39,8 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.lblPasDeRepSelectionnee = new System.Windows.Forms.Label();
             this.gpbxReponse = new System.Windows.Forms.GroupBox();
+            this.lblBonneReponse = new System.Windows.Forms.Label();
             this.lblScoreTotal = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnQuestionSuivante = new System.Windows.Forms.Button();
             this.affichagePropositionReponses.SuspendLayout();
             this.gpbxReponse.SuspendLayout();
@@ -57,7 +57,7 @@
             // 
             // btnValiderRep
             // 
-            this.btnValiderRep.Location = new System.Drawing.Point(461, 445);
+            this.btnValiderRep.Location = new System.Drawing.Point(461, 537);
             this.btnValiderRep.Name = "btnValiderRep";
             this.btnValiderRep.Size = new System.Drawing.Size(111, 55);
             this.btnValiderRep.TabIndex = 2;
@@ -91,7 +91,7 @@
             this.affichagePropositionReponses.Controls.Add(this.radioButton1);
             this.affichagePropositionReponses.Location = new System.Drawing.Point(71, 156);
             this.affichagePropositionReponses.Name = "affichagePropositionReponses";
-            this.affichagePropositionReponses.Size = new System.Drawing.Size(501, 146);
+            this.affichagePropositionReponses.Size = new System.Drawing.Size(501, 232);
             this.affichagePropositionReponses.TabIndex = 18;
             this.affichagePropositionReponses.TabStop = false;
             this.affichagePropositionReponses.Text = "Réponses possibles : ";
@@ -110,7 +110,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(24, 108);
+            this.radioButton3.Location = new System.Drawing.Point(24, 170);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(85, 17);
             this.radioButton3.TabIndex = 2;
@@ -121,7 +121,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(24, 84);
+            this.radioButton2.Location = new System.Drawing.Point(24, 125);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(85, 17);
             this.radioButton2.TabIndex = 1;
@@ -132,7 +132,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(24, 60);
+            this.radioButton1.Location = new System.Drawing.Point(24, 83);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(85, 17);
             this.radioButton1.TabIndex = 0;
@@ -145,7 +145,7 @@
             this.lblPasDeRepSelectionnee.AutoSize = true;
             this.lblPasDeRepSelectionnee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.lblPasDeRepSelectionnee.ForeColor = System.Drawing.Color.Black;
-            this.lblPasDeRepSelectionnee.Location = new System.Drawing.Point(112, 318);
+            this.lblPasDeRepSelectionnee.Location = new System.Drawing.Point(112, 407);
             this.lblPasDeRepSelectionnee.MinimumSize = new System.Drawing.Size(120, 10);
             this.lblPasDeRepSelectionnee.Name = "lblPasDeRepSelectionnee";
             this.lblPasDeRepSelectionnee.Size = new System.Drawing.Size(402, 13);
@@ -156,48 +156,49 @@
             // 
             // gpbxReponse
             // 
-            this.gpbxReponse.Controls.Add(this.label1);
-            this.gpbxReponse.Location = new System.Drawing.Point(71, 373);
+            this.gpbxReponse.Controls.Add(this.lblBonneReponse);
+            this.gpbxReponse.Location = new System.Drawing.Point(71, 440);
             this.gpbxReponse.Name = "gpbxReponse";
-            this.gpbxReponse.Size = new System.Drawing.Size(501, 65);
+            this.gpbxReponse.Size = new System.Drawing.Size(501, 77);
             this.gpbxReponse.TabIndex = 20;
             this.gpbxReponse.TabStop = false;
             this.gpbxReponse.Text = "Bonne réponse : ";
             this.gpbxReponse.Visible = false;
+            // 
+            // lblBonneReponse
+            // 
+            this.lblBonneReponse.AutoSize = true;
+            this.lblBonneReponse.Location = new System.Drawing.Point(21, 30);
+            this.lblBonneReponse.Name = "lblBonneReponse";
+            this.lblBonneReponse.Size = new System.Drawing.Size(91, 13);
+            this.lblBonneReponse.TabIndex = 0;
+            this.lblBonneReponse.Text = "lblBonneReponse";
             // 
             // lblScoreTotal
             // 
             this.lblScoreTotal.AutoSize = true;
             this.lblScoreTotal.Location = new System.Drawing.Point(71, 64);
             this.lblScoreTotal.Name = "lblScoreTotal";
-            this.lblScoreTotal.Size = new System.Drawing.Size(33, 13);
+            this.lblScoreTotal.Size = new System.Drawing.Size(44, 13);
             this.lblScoreTotal.TabIndex = 21;
-            this.lblScoreTotal.Text = "score";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "lblBonneReponse";
+            this.lblScoreTotal.Text = "Score : ";
             // 
             // btnQuestionSuivante
             // 
-            this.btnQuestionSuivante.Location = new System.Drawing.Point(235, 445);
+            this.btnQuestionSuivante.Location = new System.Drawing.Point(235, 537);
             this.btnQuestionSuivante.Name = "btnQuestionSuivante";
             this.btnQuestionSuivante.Size = new System.Drawing.Size(124, 55);
             this.btnQuestionSuivante.TabIndex = 22;
             this.btnQuestionSuivante.Text = "Question suivante ";
             this.btnQuestionSuivante.UseVisualStyleBackColor = true;
             this.btnQuestionSuivante.Visible = false;
+            this.btnQuestionSuivante.Click += new System.EventHandler(this.btnQuestionSuivante_Click);
             // 
             // Examen_IA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 575);
+            this.ClientSize = new System.Drawing.Size(647, 620);
             this.Controls.Add(this.btnQuestionSuivante);
             this.Controls.Add(this.lblScoreTotal);
             this.Controls.Add(this.gpbxReponse);
@@ -232,7 +233,7 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label lblPasDeRepSelectionnee;
         private System.Windows.Forms.GroupBox gpbxReponse;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBonneReponse;
         private System.Windows.Forms.Label lblScoreTotal;
         private System.Windows.Forms.Button btnQuestionSuivante;
     }

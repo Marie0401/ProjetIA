@@ -54,8 +54,7 @@ namespace Partie1bis
             this.bonneReponse = bonneRep;
             this.reponses = reps;
         }
-
-
+        
         // AUTRES METHODES
         //Une méthode d'affichage de la question = > son intitulé 
         public override string ToString()
@@ -63,16 +62,5 @@ namespace Partie1bis
             string questionAffichee = "Question : " + intitule;
             return questionAffichee;
         }
-
-        /*public void affichageReponses ()           // Il faudrait qu'on retourne un string pour pouvoir utiliser cette fonction pour l'affichage des réponses 
-        {
-            foreach (string rep in reponses)
-            {
-                Console.WriteLine(rep); 
-            }
-                  
-        }*/
-
-
     }
 }
