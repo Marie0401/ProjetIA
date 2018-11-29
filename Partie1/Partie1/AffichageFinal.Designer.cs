@@ -47,16 +47,17 @@
             // lblAffichageScoreFinal
             // 
             this.lblAffichageScoreFinal.AutoSize = true;
-            this.lblAffichageScoreFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAffichageScoreFinal.Location = new System.Drawing.Point(160, 235);
+            this.lblAffichageScoreFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAffichageScoreFinal.ForeColor = System.Drawing.Color.Black;
+            this.lblAffichageScoreFinal.Location = new System.Drawing.Point(176, 243);
             this.lblAffichageScoreFinal.Name = "lblAffichageScoreFinal";
-            this.lblAffichageScoreFinal.Size = new System.Drawing.Size(306, 33);
+            this.lblAffichageScoreFinal.Size = new System.Drawing.Size(390, 42);
             this.lblAffichageScoreFinal.TabIndex = 1;
             this.lblAffichageScoreFinal.Text = "lblAffichageScoreFinal";
             // 
             // btnFinTest
             // 
-            this.btnFinTest.Location = new System.Drawing.Point(216, 442);
+            this.btnFinTest.Location = new System.Drawing.Point(228, 437);
             this.btnFinTest.Name = "btnFinTest";
             this.btnFinTest.Size = new System.Drawing.Size(167, 63);
             this.btnFinTest.TabIndex = 2;
@@ -70,15 +71,15 @@
             this.lblMesgDeFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMesgDeFin.Location = new System.Drawing.Point(158, 391);
             this.lblMesgDeFin.Name = "lblMesgDeFin";
-            this.lblMesgDeFin.Size = new System.Drawing.Size(308, 20);
+            this.lblMesgDeFin.Size = new System.Drawing.Size(294, 20);
             this.lblMesgDeFin.TabIndex = 3;
-            this.lblMesgDeFin.Text = "Merci pour votre participation et à bientôt ! ";
+            this.lblMesgDeFin.Text = "Merci pour votre participation, à bientôt ! ";
             // 
             // AffichageFinal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 600);
+            this.ClientSize = new System.Drawing.Size(648, 621);
             this.Controls.Add(this.lblMesgDeFin);
             this.Controls.Add(this.btnFinTest);
             this.Controls.Add(this.lblAffichageScoreFinal);
