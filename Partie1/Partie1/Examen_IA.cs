@@ -232,9 +232,9 @@ namespace Partie1bis
             lblAffichageQuestion.Text = question.ToString();
             methodePourAfficherlesReponses(question);
 
-            if (compteur == 7)
+            if (compteur == 21)
             {
-                AffichageFinal AffichageFinal = new AffichageFinal();
+                AffichageFinal AffichageFinal = new AffichageFinal(score);
                 AffichageFinal.Show();
                 this.Hide();
             }

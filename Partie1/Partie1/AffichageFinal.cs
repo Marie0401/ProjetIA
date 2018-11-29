@@ -11,8 +11,8 @@ using System.Windows.Forms;
 namespace Partie1bis
 {
     public partial class AffichageFinal : Form
-    {
-        public AffichageFinal()
+    {        
+        public AffichageFinal(int score)
         {
             InitializeComponent();
             lblAffichageScoreFinal.Text = "Score final : " + score + "/20 "; 

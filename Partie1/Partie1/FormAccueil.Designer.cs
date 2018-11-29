@@ -35,7 +35,7 @@
             // 
             // btnCommencerTest
             // 
-            this.btnCommencerTest.Location = new System.Drawing.Point(203, 267);
+            this.btnCommencerTest.Location = new System.Drawing.Point(158, 267);
             this.btnCommencerTest.Name = "btnCommencerTest";
             this.btnCommencerTest.Size = new System.Drawing.Size(246, 70);
             this.btnCommencerTest.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             this.lblPhraseAccueil1.AutoSize = true;
             this.lblPhraseAccueil1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhraseAccueil1.Location = new System.Drawing.Point(82, 109);
+            this.lblPhraseAccueil1.Location = new System.Drawing.Point(30, 109);
             this.lblPhraseAccueil1.Name = "lblPhraseAccueil1";
             this.lblPhraseAccueil1.Size = new System.Drawing.Size(508, 24);
             this.lblPhraseAccueil1.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             this.lblPhraseAccueil2.AutoSize = true;
             this.lblPhraseAccueil2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhraseAccueil2.Location = new System.Drawing.Point(150, 179);
+            this.lblPhraseAccueil2.Location = new System.Drawing.Point(108, 179);
             this.lblPhraseAccueil2.Name = "lblPhraseAccueil2";
             this.lblPhraseAccueil2.Size = new System.Drawing.Size(357, 18);
             this.lblPhraseAccueil2.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 461);
+            this.ClientSize = new System.Drawing.Size(577, 461);
             this.Controls.Add(this.lblPhraseAccueil2);
             this.Controls.Add(this.lblPhraseAccueil1);
             this.Controls.Add(this.btnCommencerTest);
