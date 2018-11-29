@@ -14,8 +14,8 @@ namespace Partie1bis
     {
         private List<Question> questions = new List<Question>();
         private Question question = new Question(); 
-        int compteur = 0;
-        int score = 0; 
+        public int compteur = 0;
+        public int score = 0; 
 
         
 
@@ -27,8 +27,7 @@ namespace Partie1bis
             choixQuestionAuHasard();
             lblNumQuestion.Text = numQuestionSur20_Affichage();
             lblAffichageQuestion.Text = question.ToString();
-            methodePourAfficherlesReponses(question); 
-
+            methodePourAfficherlesReponses(question);
         }
 
         public string numQuestionSur20_Affichage ()                        // Affiche la progression sur les 20 questions posées
@@ -82,15 +81,15 @@ namespace Partie1bis
         }
 
 
-        public void choixQuestionAuHasard()                                   // A revérifier une fois toutes les questions rentrées mais ça a l'air de fonctionner  
+        public void choixQuestionAuHasard()                                   // A revérifier une fois toutes les questions rentrées mais CA Y EST CA FONCTIONNE   
         {
             bool boucle = true;
             Random aleatoire = new Random();
             int numQuest = 0;
             while (boucle == true)
             {
-                numQuest = aleatoire.Next(0, questions.Count());              // Pas de changement entre le question.Count et le question.Count + 1, pourtant 
-                                                                              // il a l'air de ne jamais afficher la dernière question de la liste. CA Y EST JAI COMPRIS POURQUOI WOUHOU 
+                numQuest = aleatoire.Next(0, questions.Count());               
+                                                                               
                 if (questions[numQuest].dejaChoisie == true)
                 {
                     numQuest = aleatoire.Next(0, questions.Count());
@@ -105,8 +104,8 @@ namespace Partie1bis
            }
         }
 
-        public void methodePourAfficherlesReponses(Question question)          // Ce n'est peut-être pas optimal mais ça permet d'utiliser les  
-        {                                                                       // radioButton (une seule bonne réponse possible)
+        public void methodePourAfficherlesReponses(Question question)      // Cette fonction permet d'afficher les propositions de réponses qu'il y en ait 1, 2, 3 ou 4 associées à la question.
+        {                                                                  //Cela permet de diversifier les types de réponses (mettre un vrai/faux n'impliquant que deux réponses possibles par ex)
             radioButton0.Visible = true;
             radioButton1.Visible = true;
             radioButton2.Visible = true;
@@ -146,24 +145,28 @@ namespace Partie1bis
 
         }
 
-        public void CalculeScore ()
-
-        {
+        public void CalculeScore ()                                            // Cette fonction permet de calculer le score mais on l'utilise également pour afficher la bonne  
+                                                                               // réponse en vert quand l'élève a bien répondu, afin de l'encourager. Il n'y a pas de mise en 
+        {                                                                      // couleur particulière quand il se trompe (remise en gris clair). 
             if ((question.bonneReponse == 0) && (radioButton0.Checked == true))
             {
                 score++;
+                lblBonneReponse.BackColor = Color.LightGreen; 
             }
             else if ((question.bonneReponse == 1) && (radioButton1.Checked == true))
             {
                 score++;
+                lblBonneReponse.BackColor = Color.LightGreen;
             }
             if ((question.bonneReponse == 2) && (radioButton2.Checked == true))
             {
                 score++;
+                lblBonneReponse.BackColor = Color.LightGreen;
             }
             if ((question.bonneReponse == 3) && (radioButton3.Checked == true))
             {
                 score++;
+                lblBonneReponse.BackColor = Color.LightGreen;
             }
 
             lblScoreTotal.Text = "Score : " + score + "/20";
@@ -210,6 +213,7 @@ namespace Partie1bis
         private void btnQuestionSuivante_Click(object sender, EventArgs e)
         {
             gpbxReponse.Visible = false;
+            lblBonneReponse.BackColor = Color.WhiteSmoke;  
             btnQuestionSuivante.Visible = false;
             btnValiderRep.Visible = true;
 
@@ -223,10 +227,17 @@ namespace Partie1bis
             radioButton2.Checked = false;
             radioButton3.Checked = false;
 
-            choixQuestionAuHasard();
+            choixQuestionAuHasard();            
             lblNumQuestion.Text = numQuestionSur20_Affichage();
             lblAffichageQuestion.Text = question.ToString();
-            methodePourAfficherlesReponses(question); 
+            methodePourAfficherlesReponses(question);
+
+            if (compteur == 7)
+            {
+                AffichageFinal AffichageFinal = new AffichageFinal();
+                AffichageFinal.Show();
+                this.Hide();
+            }
 
 
         }

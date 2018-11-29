@@ -24,5 +24,10 @@ namespace Partie1bis
             Examen_IA.Show();
             this.Hide();
         }
+
+        private void FormAccueil_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

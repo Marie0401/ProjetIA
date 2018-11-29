@@ -49,9 +49,10 @@
             // titre
             // 
             this.titre.AutoSize = true;
-            this.titre.Location = new System.Drawing.Point(232, 26);
+            this.titre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titre.Location = new System.Drawing.Point(186, 19);
             this.titre.Name = "titre";
-            this.titre.Size = new System.Drawing.Size(144, 13);
+            this.titre.Size = new System.Drawing.Size(257, 24);
             this.titre.TabIndex = 0;
             this.titre.Text = "Examen d\'IA - bon courage ! ";
             // 
@@ -68,7 +69,7 @@
             // lblNumQuestion
             // 
             this.lblNumQuestion.AutoSize = true;
-            this.lblNumQuestion.Location = new System.Drawing.Point(489, 65);
+            this.lblNumQuestion.Location = new System.Drawing.Point(489, 70);
             this.lblNumQuestion.Name = "lblNumQuestion";
             this.lblNumQuestion.Size = new System.Drawing.Size(83, 13);
             this.lblNumQuestion.TabIndex = 16;
@@ -162,7 +163,7 @@
             this.gpbxReponse.Size = new System.Drawing.Size(501, 77);
             this.gpbxReponse.TabIndex = 20;
             this.gpbxReponse.TabStop = false;
-            this.gpbxReponse.Text = "Bonne réponse : ";
+            this.gpbxReponse.Text = "La bonne réponse était : ";
             this.gpbxReponse.Visible = false;
             // 
             // lblBonneReponse
@@ -177,7 +178,7 @@
             // lblScoreTotal
             // 
             this.lblScoreTotal.AutoSize = true;
-            this.lblScoreTotal.Location = new System.Drawing.Point(71, 64);
+            this.lblScoreTotal.Location = new System.Drawing.Point(71, 69);
             this.lblScoreTotal.Name = "lblScoreTotal";
             this.lblScoreTotal.Size = new System.Drawing.Size(44, 13);
             this.lblScoreTotal.TabIndex = 21;
