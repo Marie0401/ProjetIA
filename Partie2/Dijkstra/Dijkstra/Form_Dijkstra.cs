@@ -39,7 +39,7 @@ namespace Dijkstra
             matrice[4, 5] = 7;    matrice[5, 4] = 7;
             matrice[5, 6] = 4;    matrice[6, 5] = 4;
         }
-        private void btn_RechercheCheminLPCourt_Click(object sender, EventArgs e)
+        public void btn_RechercheCheminLPCourt_Click(object sender, EventArgs e)
         {
             numinitial = Convert.ToInt32(txtbx_NoeudInit.Text);
             numfinal = Convert.ToInt32(txtbx_NoeudFinal.Text);

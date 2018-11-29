@@ -5,8 +5,6 @@
         private System.Windows.Forms.GroupBox FermesActu_groupeBx;
         private System.Windows.Forms.Label lbl_reponseOuverts;
         private System.Windows.Forms.Label lbl_reponseFermes;
-        private System.Windows.Forms.TextBox txtBox_reponseFermes;
-        private System.Windows.Forms.TextBox txtBox_reponseOuverts;
         private System.Windows.Forms.PictureBox Image_Graphe;
         private System.Windows.Forms.Button btn_Valider;
 
@@ -144,6 +142,7 @@
             this.versGraphe_button.TabIndex = 9;
             this.versGraphe_button.Text = "Passez à l\'exercice suivant ";
             this.versGraphe_button.UseVisualStyleBackColor = true;
+            this.versGraphe_button.Click += new System.EventHandler(this.versGraphe_button_Click);
             // 
             // Reponse_groupBox
             // 
@@ -161,7 +160,7 @@
             // 
             // txtBox_reponseOuverts
             // 
-            this.txtBox_reponseOuverts.Location = new System.Drawing.Point(6, 50);
+            this.txtBox_reponseOuverts.Location = new System.Drawing.Point(15, 50);
             this.txtBox_reponseOuverts.Multiline = true;
             this.txtBox_reponseOuverts.Name = "txtBox_reponseOuverts";
             this.txtBox_reponseOuverts.Size = new System.Drawing.Size(158, 188);
@@ -279,6 +278,8 @@
         private System.Windows.Forms.TextBox solutionFerme_textBox;
         private System.Windows.Forms.Button versGraphe_button;
         private System.Windows.Forms.Button Reinitialiser_button;
+        private System.Windows.Forms.TextBox txtBox_reponseOuverts;
+        private System.Windows.Forms.TextBox txtBox_reponseFermes;
     }
 }
 
