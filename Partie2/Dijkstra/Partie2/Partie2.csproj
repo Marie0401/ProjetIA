@@ -83,6 +83,12 @@
   <ItemGroup>
     <None Include="bin\Debug\Graphe1.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dijkstra\Dijkstra.csproj">
+      <Project>{1c46c7f1-d6f8-45b3-9426-11aafa45a41e}</Project>
+      <Name>Dijkstra</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

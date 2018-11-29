@@ -84,7 +84,7 @@ namespace Dijkstra
                 for (int j = 0; j < nbnoeuds; j++)
                     matrice[i, j] = -1;
 
-            // Ensuite on a ls tructure suivante : 
+            // Ensuite on a la structure suivante : 
             //  arc : n°noeud départ    n°noeud arrivée  valeur
             //  exemple 4 : 
             ligne = monStreamReader.ReadLine();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dijkstra
 {
-    class Noeud : Noeuds  // sans s car ce noeud en particulier
+    public class Noeud : Noeuds  // sans s car ce noeud en particulier
     {
         public int numero;
 

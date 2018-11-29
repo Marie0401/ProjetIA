@@ -8,7 +8,7 @@ namespace Dijkstra
 {
     // classe abstraite, il est donc impératif de créer une classe qui en hérite
     // pour résoudre un problème particulier en y ajoutant des infos liées au contexte du problème
-    abstract class Noeuds // classe mère donc avec un s car tous les noeuds en général
+    public abstract class Noeuds // classe mère donc avec un s car tous les noeuds en général
     {
         // protected string Name;                      // DOIT ETRE UNIQUE POUR CHAQUE genericnode !!
         protected double coutDepuisInit;               //coût du chemin du noeud initial jusqu'à ce noeud
