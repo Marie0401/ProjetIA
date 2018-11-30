@@ -69,6 +69,7 @@ namespace Partie2
         protected void versGraphe_button_Click(object sender, EventArgs e)
         {
             EvaluationArbre EvalArbre = new EvaluationArbre(matrice, nbreNoeuds, solutionFerme_textBox.Text, solutionOuvert_textBox1.Text);
+            this.Hide();
             EvalArbre.ShowDialog();
         }
 

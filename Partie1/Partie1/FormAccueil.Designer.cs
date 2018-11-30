@@ -57,11 +57,11 @@
             // 
             this.lblPhraseAccueil2.AutoSize = true;
             this.lblPhraseAccueil2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhraseAccueil2.Location = new System.Drawing.Point(108, 179);
+            this.lblPhraseAccueil2.Location = new System.Drawing.Point(89, 182);
             this.lblPhraseAccueil2.Name = "lblPhraseAccueil2";
-            this.lblPhraseAccueil2.Size = new System.Drawing.Size(357, 18);
+            this.lblPhraseAccueil2.Size = new System.Drawing.Size(403, 18);
             this.lblPhraseAccueil2.TabIndex = 2;
-            this.lblPhraseAccueil2.Text = "20 questions vont vous être posées. Êtes vous prêt ?";
+            this.lblPhraseAccueil2.Text = "Une série de questions va vous être posée. Êtes vous prêt ?";
             // 
             // FormAccueil
             // 
@@ -73,7 +73,6 @@
             this.Controls.Add(this.btnCommencerTest);
             this.Name = "FormAccueil";
             this.Text = "FormAccueil";
-            this.Load += new System.EventHandler(this.FormAccueil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

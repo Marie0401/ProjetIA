@@ -16,9 +16,7 @@ namespace Partie1bis
         private Question question = new Question(); 
         public int compteur = 0;
         public int score = 0; 
-
         
-
         public Examen_IA()
         {
             InitializeComponent();            
@@ -32,16 +30,13 @@ namespace Partie1bis
 
         public string numQuestionSur20_Affichage ()                        // Affiche la progression sur les 20 questions posées
         {
-            string numQuest = ("Question n°" + compteur + "/20");
+            string numQuest = ("Question n°" + compteur);
             return numQuest; 
         }
-
-
         private void Examen_IA_Load(object sender, EventArgs e)            // Erreur de clic 
         {
             // affichageQuestion.Items.Add(question.ToString());            // Façon d'afficher dans des listBox 
         }
-
         // Méthodes 
         public List<Question> serializeQuestions()                         // On crée toutes les réponses, on crée toutes les questions, on les met dans la liste et on sérialise le tout. 
         {
@@ -74,13 +69,10 @@ namespace Partie1bis
             QuestionXML.Serialisation("ceciEstUnFichierXML.xml", questions);
             return questions;  
         }
-
         public void deserializeQuestions(List<Question> questions)
         {
             questions = QuestionXML.CreerAPartirDuFichier("ceciEstUnFichierXML.xml");
         }
-
-
         public void choixQuestionAuHasard()                                   // A revérifier une fois toutes les questions rentrées mais CA Y EST CA FONCTIONNE   
         {
             bool boucle = true;
@@ -103,7 +95,6 @@ namespace Partie1bis
                 }
            }
         }
-
         public void methodePourAfficherlesReponses(Question question)      // Cette fonction permet d'afficher les propositions de réponses qu'il y en ait 1, 2, 3 ou 4 associées à la question.
         {                                                                  //Cela permet de diversifier les types de réponses (mettre un vrai/faux n'impliquant que deux réponses possibles par ex)
             radioButton0.Visible = true;
@@ -144,7 +135,6 @@ namespace Partie1bis
             }
 
         }
-
         public void CalculeScore ()                                            // Cette fonction permet de calculer le score mais on l'utilise également pour afficher la bonne  
                                                                                // réponse en vert quand l'élève a bien répondu, afin de l'encourager. Il n'y a pas de mise en 
         {                                                                      // couleur particulière quand il se trompe (remise en gris clair). 
@@ -171,7 +161,6 @@ namespace Partie1bis
 
             lblScoreTotal.Text = "Score : " + score + "/20";
         }
-
         public void AssocieBonneReponse ()
         {
             if (question.bonneReponse == 0)
@@ -186,7 +175,6 @@ namespace Partie1bis
             if (question.bonneReponse == 3)
                 lblBonneReponse.Text = radioButton3.Text;
         }
-
         // Boutons 
         private void validerRep_Click(object sender, EventArgs e)
         {
@@ -209,7 +197,6 @@ namespace Partie1bis
                 CalculeScore(); 
             }
         }
-
         private void btnQuestionSuivante_Click(object sender, EventArgs e)
         {
             gpbxReponse.Visible = false;
