@@ -50,7 +50,7 @@
             // 
             this.titre.AutoSize = true;
             this.titre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titre.Location = new System.Drawing.Point(186, 19);
+            this.titre.Location = new System.Drawing.Point(239, 9);
             this.titre.Name = "titre";
             this.titre.Size = new System.Drawing.Size(257, 24);
             this.titre.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             // btnValiderRep
             // 
-            this.btnValiderRep.Location = new System.Drawing.Point(461, 537);
+            this.btnValiderRep.Location = new System.Drawing.Point(448, 644);
             this.btnValiderRep.Name = "btnValiderRep";
             this.btnValiderRep.Size = new System.Drawing.Size(111, 55);
             this.btnValiderRep.TabIndex = 2;
@@ -69,7 +69,7 @@
             // lblNumQuestion
             // 
             this.lblNumQuestion.AutoSize = true;
-            this.lblNumQuestion.Location = new System.Drawing.Point(489, 70);
+            this.lblNumQuestion.Location = new System.Drawing.Point(542, 60);
             this.lblNumQuestion.Name = "lblNumQuestion";
             this.lblNumQuestion.Size = new System.Drawing.Size(83, 13);
             this.lblNumQuestion.TabIndex = 16;
@@ -78,7 +78,7 @@
             // lblAffichageQuestion
             // 
             this.lblAffichageQuestion.AutoSize = true;
-            this.lblAffichageQuestion.Location = new System.Drawing.Point(68, 118);
+            this.lblAffichageQuestion.Location = new System.Drawing.Point(124, 100);
             this.lblAffichageQuestion.Name = "lblAffichageQuestion";
             this.lblAffichageQuestion.Size = new System.Drawing.Size(104, 13);
             this.lblAffichageQuestion.TabIndex = 17;
@@ -90,7 +90,7 @@
             this.affichagePropositionReponses.Controls.Add(this.radioButton3);
             this.affichagePropositionReponses.Controls.Add(this.radioButton2);
             this.affichagePropositionReponses.Controls.Add(this.radioButton1);
-            this.affichagePropositionReponses.Location = new System.Drawing.Point(71, 156);
+            this.affichagePropositionReponses.Location = new System.Drawing.Point(126, 279);
             this.affichagePropositionReponses.Name = "affichagePropositionReponses";
             this.affichagePropositionReponses.Size = new System.Drawing.Size(501, 232);
             this.affichagePropositionReponses.TabIndex = 18;
@@ -146,7 +146,7 @@
             this.lblPasDeRepSelectionnee.AutoSize = true;
             this.lblPasDeRepSelectionnee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.lblPasDeRepSelectionnee.ForeColor = System.Drawing.Color.Black;
-            this.lblPasDeRepSelectionnee.Location = new System.Drawing.Point(112, 407);
+            this.lblPasDeRepSelectionnee.Location = new System.Drawing.Point(170, 527);
             this.lblPasDeRepSelectionnee.MinimumSize = new System.Drawing.Size(120, 10);
             this.lblPasDeRepSelectionnee.Name = "lblPasDeRepSelectionnee";
             this.lblPasDeRepSelectionnee.Size = new System.Drawing.Size(402, 13);
@@ -158,7 +158,7 @@
             // gpbxReponse
             // 
             this.gpbxReponse.Controls.Add(this.lblBonneReponse);
-            this.gpbxReponse.Location = new System.Drawing.Point(71, 440);
+            this.gpbxReponse.Location = new System.Drawing.Point(126, 543);
             this.gpbxReponse.Name = "gpbxReponse";
             this.gpbxReponse.Size = new System.Drawing.Size(501, 77);
             this.gpbxReponse.TabIndex = 20;
@@ -178,7 +178,7 @@
             // lblScoreTotal
             // 
             this.lblScoreTotal.AutoSize = true;
-            this.lblScoreTotal.Location = new System.Drawing.Point(71, 69);
+            this.lblScoreTotal.Location = new System.Drawing.Point(124, 59);
             this.lblScoreTotal.Name = "lblScoreTotal";
             this.lblScoreTotal.Size = new System.Drawing.Size(44, 13);
             this.lblScoreTotal.TabIndex = 21;
@@ -186,7 +186,7 @@
             // 
             // btnQuestionSuivante
             // 
-            this.btnQuestionSuivante.Location = new System.Drawing.Point(235, 537);
+            this.btnQuestionSuivante.Location = new System.Drawing.Point(222, 644);
             this.btnQuestionSuivante.Name = "btnQuestionSuivante";
             this.btnQuestionSuivante.Size = new System.Drawing.Size(124, 55);
             this.btnQuestionSuivante.TabIndex = 22;
@@ -199,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 620);
+            this.ClientSize = new System.Drawing.Size(752, 743);
             this.Controls.Add(this.btnQuestionSuivante);
             this.Controls.Add(this.lblScoreTotal);
             this.Controls.Add(this.gpbxReponse);

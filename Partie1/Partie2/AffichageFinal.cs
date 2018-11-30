@@ -8,18 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Partie1bis
+namespace Partie2
 {
     public partial class AffichageFinal : Form
-    {        
+    {
         public AffichageFinal(int score)
         {
             InitializeComponent();
-            lblAffichageScoreFinal.Text = "Score final : " + score + "/20 "; 
+            lblAffichageScoreFinal.Text = "Score final : " + score + "/20 ";
         }
 
         private void btnFinTest_Click(object sender, EventArgs e)
         {
+            Application.Exit();
             this.Close();
         }
     }

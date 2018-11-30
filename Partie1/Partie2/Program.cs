@@ -14,9 +14,10 @@ namespace Partie2
         [STAThread]
         static void Main()
         {
+            int score = 0;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Examen_IA_partie2());
+            Application.Run(new Examen_IA_partie2(score));
         }
     }
 }

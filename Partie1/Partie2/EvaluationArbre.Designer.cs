@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.FermesActu_groupeBx = new System.Windows.Forms.GroupBox();
+            this.questionSuivante_button = new System.Windows.Forms.Button();
             this.Valider_button = new System.Windows.Forms.Button();
             this.GrapheSolution_treeView = new System.Windows.Forms.TreeView();
             this.GrapheReponse_treeView = new System.Windows.Forms.TreeView();
@@ -49,6 +50,7 @@
             // 
             // FermesActu_groupeBx
             // 
+            this.FermesActu_groupeBx.Controls.Add(this.questionSuivante_button);
             this.FermesActu_groupeBx.Controls.Add(this.Valider_button);
             this.FermesActu_groupeBx.Controls.Add(this.GrapheSolution_treeView);
             this.FermesActu_groupeBx.Controls.Add(this.GrapheReponse_treeView);
@@ -64,6 +66,17 @@
             this.FermesActu_groupeBx.TabIndex = 1;
             this.FermesActu_groupeBx.TabStop = false;
             this.FermesActu_groupeBx.Text = "Dijkstra à la main";
+            // 
+            // questionSuivante_button
+            // 
+            this.questionSuivante_button.Location = new System.Drawing.Point(594, 467);
+            this.questionSuivante_button.Name = "questionSuivante_button";
+            this.questionSuivante_button.Size = new System.Drawing.Size(135, 65);
+            this.questionSuivante_button.TabIndex = 22;
+            this.questionSuivante_button.Text = "Question suivante";
+            this.questionSuivante_button.UseVisualStyleBackColor = true;
+            this.questionSuivante_button.Visible = false;
+            this.questionSuivante_button.Click += new System.EventHandler(this.questionSuivante_button_Click);
             // 
             // Valider_button
             // 
@@ -175,7 +188,7 @@
             // 
             // Image_Graphe
             // 
-            this.Image_Graphe.Image = global::Partie2.Properties.Resources.Graphe1;
+            this.Image_Graphe.Image = global::Partie2.Properties.Resources.Graphe11;
             this.Image_Graphe.Location = new System.Drawing.Point(240, 19);
             this.Image_Graphe.Name = "Image_Graphe";
             this.Image_Graphe.Size = new System.Drawing.Size(336, 166);
@@ -216,5 +229,6 @@
         private System.Windows.Forms.TreeView GrapheReponse_treeView;
         private System.Windows.Forms.TreeView GrapheSolution_treeView;
         private System.Windows.Forms.Button Valider_button;
+        private System.Windows.Forms.Button questionSuivante_button;
     }
 }

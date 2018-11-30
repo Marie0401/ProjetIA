@@ -1,4 +1,4 @@
-﻿namespace Partie1bis
+﻿namespace Partie2
 {
     partial class AffichageFinal
     {
@@ -49,7 +49,7 @@
             this.lblAffichageScoreFinal.AutoSize = true;
             this.lblAffichageScoreFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAffichageScoreFinal.ForeColor = System.Drawing.Color.Black;
-            this.lblAffichageScoreFinal.Location = new System.Drawing.Point(176, 243);
+            this.lblAffichageScoreFinal.Location = new System.Drawing.Point(171, 242);
             this.lblAffichageScoreFinal.Name = "lblAffichageScoreFinal";
             this.lblAffichageScoreFinal.Size = new System.Drawing.Size(390, 42);
             this.lblAffichageScoreFinal.TabIndex = 1;

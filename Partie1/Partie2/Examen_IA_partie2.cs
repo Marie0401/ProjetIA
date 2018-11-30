@@ -13,6 +13,7 @@ namespace Partie2
 {
     public partial class Examen_IA_partie2 : Form
     {
+        int score;
         static public double[,] matrice; // donne les relations entre les noeuds 
         static public int nbreNoeuds;
         string L_Ouverts_Donnes_Uti;
@@ -23,7 +24,7 @@ namespace Partie2
         bool correctOuv;
         bool correctFerm;
 
-        public Examen_IA_partie2()
+        public Examen_IA_partie2(int sc)
         {
             InitializeComponent();
             InitialiserGraphe();
@@ -32,6 +33,7 @@ namespace Partie2
             solutionFerme_textBox.Text = "{}\r\n";
             solutionOuvert_textBox1.Text = "{" + NoeudInit_textBox.Text + "}\r\n";
             numfinal = Convert.ToInt32(NoeudFinal_textBox.Text);
+            score = sc; 
         }
 
         protected void btn_Valider_Click(object sender, EventArgs e)
@@ -53,8 +55,14 @@ namespace Partie2
 
                 // On corrige les fermes 
                 correctOuv = CorrectionChaine(L_Ouverts_Donnes_Uti, L_solution_ouverts, txtBox_reponseOuverts);
+                if (correctOuv)
+                    score += 1;
                 // On corrige les fermés
                 correctFerm = CorrectionChaine(L_Fermes_Donnes_Uti, L_solution_fermes, txtBox_reponseFermes);
+                if (correctFerm)
+                    score += 1;
+                btn_Valider.Visible = false;
+                versGraphe_button.Visible = true;
             }
         }
         protected void Reinitialiser_button_Click(object sender, EventArgs e)
@@ -68,7 +76,7 @@ namespace Partie2
         }
         protected void versGraphe_button_Click(object sender, EventArgs e)
         {
-            EvaluationArbre EvalArbre = new EvaluationArbre(matrice, nbreNoeuds, solutionFerme_textBox.Text, solutionOuvert_textBox1.Text);
+            EvaluationArbre EvalArbre = new EvaluationArbre(matrice, nbreNoeuds, solutionFerme_textBox.Text, solutionOuvert_textBox1.Text, score);
             this.Hide();
             EvalArbre.ShowDialog();
         }

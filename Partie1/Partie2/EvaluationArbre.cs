@@ -14,26 +14,38 @@ namespace Partie2
     {
         static public double[,] matrice;
         int nbreNoeuds;
+        int score;
 
-        public EvaluationArbre(double[,] mat, int nNoeuds, string ferm, string ouv)
+        public EvaluationArbre(double[,] mat, int nNoeuds, string ferm, string ouv, int sc)
         {
             InitializeComponent();
             matrice = mat;
             nbreNoeuds = nNoeuds;
             solutionFerme_textBox.Text = ferm;
             solutionOuvert_textBox.Text = ouv;
+            score = sc;
             DessinerGraphe();
         }
 
         private void Graphe_treeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
             GrapheReponse_treeView.SelectedNode.BeginEdit();
-            //MessageBox.Show(treeView1.SelectedNode.Text);
         }
         private void Valider_button_Click(object sender, EventArgs e)
         {
+            Valider_button.Visible = false;
             GrapheSolution_treeView.Visible = true;
-            CompareTreeNodes(GrapheReponse_treeView, GrapheSolution_treeView);
+            questionSuivante_button.Visible = true;
+            int faux = 0;
+            faux = CompareTreeNodes(GrapheReponse_treeView, GrapheSolution_treeView, faux);
+            if (faux == 0)
+                score++;
+        }
+        private void questionSuivante_button_Click(object sender, EventArgs e)
+        {
+            AffichageFinal AffichageFinal = new AffichageFinal(score);
+            AffichageFinal.Show();
+            this.Hide();
         }
 
         public void DessinerGraphe()
@@ -55,21 +67,22 @@ namespace Partie2
             g.ConstruireArbre(GrapheReponse_treeView, "?");
             g.ConstruireArbre(GrapheSolution_treeView);
         }
-        void CompareTreeNodes(TreeView tv1, TreeView tv2)
+        int CompareTreeNodes(TreeView tv1, TreeView tv2, int faux)
         {
             int compare = Math.Min(tv1.Nodes.Count, tv2.Nodes.Count);
             for (int i = 0; i < compare; i++)
             {
-                CompareRecursiveTree(tv1.Nodes[i], tv2.Nodes[i]);
+                faux = CompareRecursiveTree(tv1.Nodes[i], tv2.Nodes[i], faux);
             }
-
+            return faux;
         }
-        void CompareRecursiveTree(TreeNode tn1, TreeNode tn2)
+        int CompareRecursiveTree(TreeNode tn1, TreeNode tn2, int faux)
         {
             if (tn1.Text != tn2.Text)
             {
                 tn1.ForeColor = Color.Red;
                 tn2.ForeColor = Color.Red;
+                faux++;
             }
             else
             {
@@ -79,8 +92,9 @@ namespace Partie2
             int compare = tn1.Nodes.Count;  // Les deux arbres sont forcément de même taille
             for (int i = 0; i < compare; i++)
             {
-                CompareRecursiveTree(tn1.Nodes[i], tn2.Nodes[i]);
+                faux = CompareRecursiveTree(tn1.Nodes[i], tn2.Nodes[i], faux);
             }
+            return faux;
         }
         protected void AfficherListes(TextBox tB, List<int> liste)
         {

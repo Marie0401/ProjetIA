@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AffichageFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AffichageFinal.Designer.cs">
+      <DependentUpon>AffichageFinal.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConstructionArbre.cs" />
     <Compile Include="EvaluationArbre.cs">
       <SubType>Form</SubType>
@@ -63,8 +69,14 @@
     <Compile Include="Noeuds.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AffichageFinal.resx">
+      <DependentUpon>AffichageFinal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EvaluationArbre.resx">
       <DependentUpon>EvaluationArbre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examen_IA_partie2.resx">
+      <DependentUpon>Examen_IA_partie2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

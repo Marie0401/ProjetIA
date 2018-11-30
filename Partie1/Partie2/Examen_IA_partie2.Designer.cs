@@ -36,7 +36,6 @@
         {
             this.FermesActu_groupeBx = new System.Windows.Forms.GroupBox();
             this.Solution_groupBox = new System.Windows.Forms.GroupBox();
-            this.Reinitialiser_button = new System.Windows.Forms.Button();
             this.solutionFerme_textBox = new System.Windows.Forms.TextBox();
             this.solutionOuvert_label = new System.Windows.Forms.Label();
             this.solutionFerme_label = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.NoeudFinal_label = new System.Windows.Forms.Label();
             this.NoeudInit_label = new System.Windows.Forms.Label();
             this.Image_Graphe = new System.Windows.Forms.PictureBox();
+            this.Reinitialiser_button = new System.Windows.Forms.Button();
             this.FermesActu_groupeBx.SuspendLayout();
             this.Solution_groupBox.SuspendLayout();
             this.Reponse_groupBox.SuspendLayout();
@@ -90,16 +90,6 @@
             this.Solution_groupBox.TabStop = false;
             this.Solution_groupBox.Text = "Solution";
             // 
-            // Reinitialiser_button
-            // 
-            this.Reinitialiser_button.Location = new System.Drawing.Point(53, 255);
-            this.Reinitialiser_button.Name = "Reinitialiser_button";
-            this.Reinitialiser_button.Size = new System.Drawing.Size(111, 36);
-            this.Reinitialiser_button.TabIndex = 10;
-            this.Reinitialiser_button.Text = "Réinisialiser";
-            this.Reinitialiser_button.UseVisualStyleBackColor = true;
-            this.Reinitialiser_button.Click += new System.EventHandler(this.Reinitialiser_button_Click);
-            // 
             // solutionFerme_textBox
             // 
             this.solutionFerme_textBox.Location = new System.Drawing.Point(197, 49);
@@ -126,7 +116,7 @@
             this.solutionFerme_label.TabIndex = 4;
             this.solutionFerme_label.Text = "Liste des fermés";
             // 
-            // solutionOuvert_textBox
+            // solutionOuvert_textBox1
             // 
             this.solutionOuvert_textBox1.Location = new System.Drawing.Point(6, 50);
             this.solutionOuvert_textBox1.Multiline = true;
@@ -142,6 +132,7 @@
             this.versGraphe_button.TabIndex = 9;
             this.versGraphe_button.Text = "Passez à l\'exercice suivant ";
             this.versGraphe_button.UseVisualStyleBackColor = true;
+            this.versGraphe_button.Visible = false;
             this.versGraphe_button.Click += new System.EventHandler(this.versGraphe_button_Click);
             // 
             // Reponse_groupBox
@@ -238,13 +229,23 @@
             // 
             // Image_Graphe
             // 
-            this.Image_Graphe.Image = global::Partie2.Properties.Resources.Graphe1;
+            this.Image_Graphe.Image = global::Partie2.Properties.Resources.Graphe11;
             this.Image_Graphe.Location = new System.Drawing.Point(240, 19);
             this.Image_Graphe.Name = "Image_Graphe";
             this.Image_Graphe.Size = new System.Drawing.Size(336, 166);
             this.Image_Graphe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Image_Graphe.TabIndex = 10;
             this.Image_Graphe.TabStop = false;
+            // 
+            // Reinitialiser_button
+            // 
+            this.Reinitialiser_button.Location = new System.Drawing.Point(53, 255);
+            this.Reinitialiser_button.Name = "Reinitialiser_button";
+            this.Reinitialiser_button.Size = new System.Drawing.Size(111, 36);
+            this.Reinitialiser_button.TabIndex = 10;
+            this.Reinitialiser_button.Text = "Réinisialiser";
+            this.Reinitialiser_button.UseVisualStyleBackColor = true;
+            this.Reinitialiser_button.Click += new System.EventHandler(this.Reinitialiser_button_Click);
             // 
             // Examen_IA_partie2
             // 
@@ -277,9 +278,9 @@
         private System.Windows.Forms.Label solutionFerme_label;
         private System.Windows.Forms.TextBox solutionOuvert_textBox1;
         private System.Windows.Forms.Button versGraphe_button;
-        private System.Windows.Forms.Button Reinitialiser_button;
         private System.Windows.Forms.TextBox txtBox_reponseOuverts;
         private System.Windows.Forms.TextBox txtBox_reponseFermes;
+        private System.Windows.Forms.Button Reinitialiser_button;
     }
 }
 
