@@ -37,10 +37,10 @@
             this.FermesActu_groupeBx = new System.Windows.Forms.GroupBox();
             this.Solution_groupBox = new System.Windows.Forms.GroupBox();
             this.Reinitialiser_button = new System.Windows.Forms.Button();
-            this.solutionOuvert_textBox = new System.Windows.Forms.TextBox();
+            this.solutionFerme_textBox = new System.Windows.Forms.TextBox();
             this.solutionOuvert_label = new System.Windows.Forms.Label();
             this.solutionFerme_label = new System.Windows.Forms.Label();
-            this.solutionFerme_textBox = new System.Windows.Forms.TextBox();
+            this.solutionOuvert_textBox1 = new System.Windows.Forms.TextBox();
             this.versGraphe_button = new System.Windows.Forms.Button();
             this.Reponse_groupBox = new System.Windows.Forms.GroupBox();
             this.txtBox_reponseOuverts = new System.Windows.Forms.TextBox();
@@ -78,10 +78,10 @@
             // Solution_groupBox
             // 
             this.Solution_groupBox.Controls.Add(this.Reinitialiser_button);
-            this.Solution_groupBox.Controls.Add(this.solutionOuvert_textBox);
+            this.Solution_groupBox.Controls.Add(this.solutionFerme_textBox);
             this.Solution_groupBox.Controls.Add(this.solutionOuvert_label);
             this.Solution_groupBox.Controls.Add(this.solutionFerme_label);
-            this.Solution_groupBox.Controls.Add(this.solutionFerme_textBox);
+            this.Solution_groupBox.Controls.Add(this.solutionOuvert_textBox1);
             this.Solution_groupBox.Controls.Add(this.versGraphe_button);
             this.Solution_groupBox.Location = new System.Drawing.Point(392, 229);
             this.Solution_groupBox.Name = "Solution_groupBox";
@@ -100,13 +100,13 @@
             this.Reinitialiser_button.UseVisualStyleBackColor = true;
             this.Reinitialiser_button.Click += new System.EventHandler(this.Reinitialiser_button_Click);
             // 
-            // solutionOuvert_textBox
+            // solutionFerme_textBox
             // 
-            this.solutionOuvert_textBox.Location = new System.Drawing.Point(6, 50);
-            this.solutionOuvert_textBox.Multiline = true;
-            this.solutionOuvert_textBox.Name = "solutionOuvert_textBox";
-            this.solutionOuvert_textBox.Size = new System.Drawing.Size(158, 188);
-            this.solutionOuvert_textBox.TabIndex = 5;
+            this.solutionFerme_textBox.Location = new System.Drawing.Point(197, 49);
+            this.solutionFerme_textBox.Multiline = true;
+            this.solutionFerme_textBox.Name = "solutionFerme_textBox";
+            this.solutionFerme_textBox.Size = new System.Drawing.Size(158, 188);
+            this.solutionFerme_textBox.TabIndex = 5;
             // 
             // solutionOuvert_label
             // 
@@ -126,13 +126,13 @@
             this.solutionFerme_label.TabIndex = 4;
             this.solutionFerme_label.Text = "Liste des fermés";
             // 
-            // solutionFerme_textBox
+            // solutionOuvert_textBox
             // 
-            this.solutionFerme_textBox.Location = new System.Drawing.Point(197, 50);
-            this.solutionFerme_textBox.Multiline = true;
-            this.solutionFerme_textBox.Name = "solutionFerme_textBox";
-            this.solutionFerme_textBox.Size = new System.Drawing.Size(158, 188);
-            this.solutionFerme_textBox.TabIndex = 6;
+            this.solutionOuvert_textBox1.Location = new System.Drawing.Point(6, 50);
+            this.solutionOuvert_textBox1.Multiline = true;
+            this.solutionOuvert_textBox1.Name = "solutionOuvert_textBox1";
+            this.solutionOuvert_textBox1.Size = new System.Drawing.Size(158, 188);
+            this.solutionOuvert_textBox1.TabIndex = 6;
             // 
             // versGraphe_button
             // 
@@ -272,10 +272,10 @@
         private System.Windows.Forms.Label NoeudInit_label;
         private System.Windows.Forms.GroupBox Reponse_groupBox;
         private System.Windows.Forms.GroupBox Solution_groupBox;
-        private System.Windows.Forms.TextBox solutionOuvert_textBox;
+        private System.Windows.Forms.TextBox solutionFerme_textBox;
         private System.Windows.Forms.Label solutionOuvert_label;
         private System.Windows.Forms.Label solutionFerme_label;
-        private System.Windows.Forms.TextBox solutionFerme_textBox;
+        private System.Windows.Forms.TextBox solutionOuvert_textBox1;
         private System.Windows.Forms.Button versGraphe_button;
         private System.Windows.Forms.Button Reinitialiser_button;
         private System.Windows.Forms.TextBox txtBox_reponseOuverts;

@@ -15,11 +15,13 @@ namespace Partie2
         static public double[,] matrice;
         int nbreNoeuds;
 
-        public EvaluationArbre(double[,] mat, int nNoeuds)
+        public EvaluationArbre(double[,] mat, int nNoeuds, string ferm, string ouv)
         {
             InitializeComponent();
             matrice = mat;
             nbreNoeuds = nNoeuds;
+            solutionFerme_textBox.Text = ferm;
+            solutionOuvert_textBox.Text = ouv;
             DessinerGraphe();
         }
 
@@ -79,6 +81,13 @@ namespace Partie2
             {
                 CompareRecursiveTree(tn1.Nodes[i], tn2.Nodes[i]);
             }
+        }
+        protected void AfficherListes(TextBox tB, List<int> liste)
+        {
+            tB.Text += "{";
+            for (int i = 0; i < liste.Count; i++)
+                tB.Text += Convert.ToString(liste[i]);
+            tB.Text += "}\r\n";
         }
     }
 }

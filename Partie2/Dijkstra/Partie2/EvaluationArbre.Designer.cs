@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.FermesActu_groupeBx = new System.Windows.Forms.GroupBox();
+            this.Valider_button = new System.Windows.Forms.Button();
+            this.GrapheSolution_treeView = new System.Windows.Forms.TreeView();
+            this.GrapheReponse_treeView = new System.Windows.Forms.TreeView();
             this.Solution_groupBox = new System.Windows.Forms.GroupBox();
             this.solutionOuvert_textBox = new System.Windows.Forms.TextBox();
             this.solutionOuvert_label = new System.Windows.Forms.Label();
@@ -39,9 +42,6 @@
             this.NoeudFinal_label = new System.Windows.Forms.Label();
             this.NoeudInit_label = new System.Windows.Forms.Label();
             this.Image_Graphe = new System.Windows.Forms.PictureBox();
-            this.GrapheReponse_treeView = new System.Windows.Forms.TreeView();
-            this.GrapheSolution_treeView = new System.Windows.Forms.TreeView();
-            this.Valider_button = new System.Windows.Forms.Button();
             this.FermesActu_groupeBx.SuspendLayout();
             this.Solution_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Image_Graphe)).BeginInit();
@@ -65,15 +65,42 @@
             this.FermesActu_groupeBx.TabStop = false;
             this.FermesActu_groupeBx.Text = "Dijkstra à la main";
             // 
+            // Valider_button
+            // 
+            this.Valider_button.Location = new System.Drawing.Point(381, 433);
+            this.Valider_button.Name = "Valider_button";
+            this.Valider_button.Size = new System.Drawing.Size(75, 23);
+            this.Valider_button.TabIndex = 21;
+            this.Valider_button.Text = "Valider";
+            this.Valider_button.UseVisualStyleBackColor = true;
+            this.Valider_button.Click += new System.EventHandler(this.Valider_button_Click);
+            // 
+            // GrapheSolution_treeView
+            // 
+            this.GrapheSolution_treeView.Location = new System.Drawing.Point(541, 239);
+            this.GrapheSolution_treeView.Name = "GrapheSolution_treeView";
+            this.GrapheSolution_treeView.Size = new System.Drawing.Size(141, 188);
+            this.GrapheSolution_treeView.TabIndex = 20;
+            this.GrapheSolution_treeView.Visible = false;
+            // 
+            // GrapheReponse_treeView
+            // 
+            this.GrapheReponse_treeView.LabelEdit = true;
+            this.GrapheReponse_treeView.Location = new System.Drawing.Point(350, 239);
+            this.GrapheReponse_treeView.Name = "GrapheReponse_treeView";
+            this.GrapheReponse_treeView.Size = new System.Drawing.Size(141, 188);
+            this.GrapheReponse_treeView.TabIndex = 19;
+            this.GrapheReponse_treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Graphe_treeView_AfterSelect);
+            // 
             // Solution_groupBox
             // 
             this.Solution_groupBox.Controls.Add(this.solutionOuvert_textBox);
             this.Solution_groupBox.Controls.Add(this.solutionOuvert_label);
             this.Solution_groupBox.Controls.Add(this.solutionFerme_label);
             this.Solution_groupBox.Controls.Add(this.solutionFerme_textBox);
-            this.Solution_groupBox.Location = new System.Drawing.Point(33, 279);
+            this.Solution_groupBox.Location = new System.Drawing.Point(15, 239);
             this.Solution_groupBox.Name = "Solution_groupBox";
-            this.Solution_groupBox.Size = new System.Drawing.Size(234, 207);
+            this.Solution_groupBox.Size = new System.Drawing.Size(234, 188);
             this.Solution_groupBox.TabIndex = 18;
             this.Solution_groupBox.TabStop = false;
             this.Solution_groupBox.Text = "Solution";
@@ -155,33 +182,6 @@
             this.Image_Graphe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Image_Graphe.TabIndex = 10;
             this.Image_Graphe.TabStop = false;
-            // 
-            // GrapheReponse_treeView
-            // 
-            this.GrapheReponse_treeView.LabelEdit = true;
-            this.GrapheReponse_treeView.Location = new System.Drawing.Point(339, 239);
-            this.GrapheReponse_treeView.Name = "GrapheReponse_treeView";
-            this.GrapheReponse_treeView.Size = new System.Drawing.Size(141, 188);
-            this.GrapheReponse_treeView.TabIndex = 19;
-            this.GrapheReponse_treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Graphe_treeView_AfterSelect);
-            // 
-            // GrapheSolution_treeView
-            // 
-            this.GrapheSolution_treeView.Location = new System.Drawing.Point(530, 239);
-            this.GrapheSolution_treeView.Name = "GrapheSolution_treeView";
-            this.GrapheSolution_treeView.Size = new System.Drawing.Size(141, 188);
-            this.GrapheSolution_treeView.TabIndex = 20;
-            this.GrapheSolution_treeView.Visible = false;
-            // 
-            // Valider_button
-            // 
-            this.Valider_button.Location = new System.Drawing.Point(371, 433);
-            this.Valider_button.Name = "Valider_button";
-            this.Valider_button.Size = new System.Drawing.Size(75, 23);
-            this.Valider_button.TabIndex = 21;
-            this.Valider_button.Text = "Valider";
-            this.Valider_button.UseVisualStyleBackColor = true;
-            this.Valider_button.Click += new System.EventHandler(this.Valider_button_Click);
             // 
             // EvaluationArbre
             // 

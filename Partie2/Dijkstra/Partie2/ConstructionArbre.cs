@@ -52,10 +52,10 @@ namespace Partie2
             Noeuds N = N0;
             L_Ouverts.Add(N0);
 
-            // tant que le noeud n'est pas terminal et que ouverts n'est pas vide
+            // tant que le noeud n'est pas terminal et que fermes n'est pas vide
             while (L_Ouverts.Count != 0 && N.AtteintNoeudFinal() == false)
             {
-                // Le meilleur noeud des ouverts est supposé placé en tête de liste
+                // Le meilleur noeud des fermes est supposé placé en tête de liste
                 // On le place dans les fermés
                 L_Ouverts.Remove(N);
                 L_Fermes.Add(N);
@@ -104,7 +104,7 @@ namespace Partie2
                 Noeuds N2bis = ChercheNoeudDansFermes(N2);
                 if (N2bis == null)
                 {
-                    // Rien dans les fermés. Est-il dans les ouverts ?
+                    // Rien dans les fermés. Est-il dans les fermes ?
                     N2bis = ChercheNoeudDansOuverts(N2);
                     if (N2bis != null)
                     {
@@ -119,7 +119,7 @@ namespace Partie2
                             // Mise à jour de la famille ....
                             N2bis.Supprime_Liens_Parent();
                             N2bis.Definir_Comme_Parent(N);
-                            // Mise à jour des ouverts
+                            // Mise à jour des fermes
                             L_Ouverts.Remove(N2bis);
                             this.AjoutAuxOuverts(N2bis);
                         }
@@ -127,7 +127,7 @@ namespace Partie2
                     }
                     else
                     {
-                        // N2 est nouveau, MAJ et insertion dans les ouverts
+                        // N2 est nouveau, MAJ et insertion dans les fermes
                         N2.CoutDepuisInit += N.CoutDeArcAvec(N2);
                         N2.CalculerCoutVersNoeudFinal();
                         N2.Definir_Comme_Parent(N);
@@ -170,7 +170,7 @@ namespace Partie2
             }
         }
         // Si on veut afficher l'arbre de recherche, il suffit de passer un treeview en paramètres
-        // Celui-ci est mis à jour avec les noeuds de la liste des fermés, on ne tient pas compte des ouverts
+        // Celui-ci est mis à jour avec les noeuds de la liste des fermés, on ne tient pas compte des fermes
         public void ConstruireArbre(TreeView TV, string caract)
         {
             if (L_Fermes == null) return;

@@ -18,8 +18,8 @@ namespace Partie2
         string L_Ouverts_Donnes_Uti;
         string L_Fermes_Donnes_Uti;
         static public int numfinal;
-        List<int> ouverts = new List<int>();
         List<int> fermes = new List<int>();
+        List<int> ouverts = new List<int>();
         bool correctOuv;
         bool correctFerm;
 
@@ -27,10 +27,10 @@ namespace Partie2
         {
             InitializeComponent();
             InitialiserGraphe();
-            txtBox_reponseOuverts.Text = "{}";
-            txtBox_reponseFermes.Text = "{" + NoeudInit_textBox.Text + "}";
-            solutionOuvert_textBox.Text = "{}\r\n";
-            solutionFerme_textBox.Text = "{" + NoeudInit_textBox.Text + "}\r\n";
+            txtBox_reponseOuverts.Text = "{" + NoeudInit_textBox.Text + "}";
+            txtBox_reponseFermes.Text = "{}";
+            solutionFerme_textBox.Text = "{}\r\n";
+            solutionOuvert_textBox1.Text = "{" + NoeudInit_textBox.Text + "}\r\n";
             numfinal = Convert.ToInt32(NoeudFinal_textBox.Text);
         }
 
@@ -38,9 +38,9 @@ namespace Partie2
         {
             if ((txtBox_reponseFermes.Text == "") || (txtBox_reponseOuverts.Text == ""))
             {
-                if (txtBox_reponseFermes.Text == "")
+                if (txtBox_reponseFermes.Text == "{}")
                     txtBox_reponseFermes.Text = "Il faut remplir cette case. ";
-                if (txtBox_reponseOuverts.Text == "")
+                if (txtBox_reponseOuverts.Text == "{" + NoeudInit_textBox.Text + "}")
                     txtBox_reponseOuverts.Text = "Il faut remplir cette case. ";
             }
             else
@@ -48,27 +48,27 @@ namespace Partie2
                 L_Ouverts_Donnes_Uti = txtBox_reponseOuverts.Text;
                 L_Fermes_Donnes_Uti = txtBox_reponseFermes.Text;
                 Solution();
-                string L_solution_ouverts = solutionOuvert_textBox.Text;
                 string L_solution_fermes = solutionFerme_textBox.Text;
+                string L_solution_ouverts = solutionOuvert_textBox1.Text;
 
-                // On corrige les ouverts 
-                CorrectionChaine(L_Ouverts_Donnes_Uti, L_solution_ouverts, correctOuv, txtBox_reponseOuverts);
+                // On corrige les fermes 
+                correctOuv = CorrectionChaine(L_Ouverts_Donnes_Uti, L_solution_ouverts, txtBox_reponseOuverts);
                 // On corrige les fermés
-                CorrectionChaine(L_Fermes_Donnes_Uti, L_solution_fermes, correctFerm, txtBox_reponseFermes);
+                correctFerm = CorrectionChaine(L_Fermes_Donnes_Uti, L_solution_fermes, txtBox_reponseFermes);
             }
         }
         protected void Reinitialiser_button_Click(object sender, EventArgs e)
         {
-            solutionOuvert_textBox.Text = "{}";
-            solutionFerme_textBox.Text = "{" + NoeudInit_textBox.Text + "}";
-            txtBox_reponseOuverts.Text = "{}\r\n";
-            txtBox_reponseFermes.Text = "{" + NoeudInit_textBox.Text + "}\r\n";
-            fermes = new List<int>();
+            solutionFerme_textBox.Text = "{}";
+            solutionOuvert_textBox1.Text = "{" + NoeudInit_textBox.Text + "}";
+            txtBox_reponseOuverts.Text = "{" + NoeudInit_textBox.Text + "}\r\n";
+            txtBox_reponseFermes.Text = "{}\r\n";
             ouverts = new List<int>();
+            fermes = new List<int>();
         }
         protected void versGraphe_button_Click(object sender, EventArgs e)
         {
-            EvaluationArbre EvalArbre = new EvaluationArbre(matrice, nbreNoeuds);
+            EvaluationArbre EvalArbre = new EvaluationArbre(matrice, nbreNoeuds, solutionFerme_textBox.Text, solutionOuvert_textBox1.Text);
             EvalArbre.ShowDialog();
         }
 
@@ -144,73 +144,70 @@ namespace Partie2
         }
         public void Solution()
         {
-            solutionOuvert_textBox.Text += "{" + NoeudInit_textBox.Text + "}\r\n";
+            solutionFerme_textBox.Text += "{" + NoeudInit_textBox.Text + "}\r\n";
             int noeudInit = Convert.ToInt32(NoeudInit_textBox.Text);
             int noeudFinal = Convert.ToInt32(NoeudFinal_textBox.Text);
-            ouverts.Add(noeudInit);
+            fermes.Add(noeudInit);
 
-            CalculFermes(noeudInit);
+            CalculOuverts(noeudInit);
 
-            while (!ouverts.Contains(noeudFinal))
+            while (!fermes.Contains(noeudFinal))
             {
-                noeudInit = fermes[0];
-                ouverts.Add(fermes[0]);             // les fermés sont triés dans l'ordre croissant
-                fermes.Remove(fermes[0]);
-                CalculFermes(noeudInit);
-                AfficherOuverts();
+                noeudInit = ouverts[0];
+                fermes.Add(ouverts[0]);             // les fermés sont triés dans l'ordre croissant
+                ouverts.Remove(ouverts[0]);
+                CalculOuverts(noeudInit);
+                AfficherListes(solutionFerme_textBox, fermes);
             }
 
         }
-        protected void CalculFermes(int noeudInit)
+        protected void CalculOuverts(int noeudInit)
         {
             // Ce qu'il y a avant dans la liste des fermés, que l'on veut rajouté à la fin 
-            List<int> fermesAnciens = new List<int>();
-            for (int i = 0; i < fermes.Count; i++)
-                fermesAnciens.Add(fermes[i]);
+            List<int> ouvertsAnciens = new List<int>();
+            for (int i = 0; i < ouverts.Count; i++)
+                ouvertsAnciens.Add(ouverts[i]);
             // On récupère tous les noeuds qui sont en liens avec noeudInit
-            List<int> fermesNonTries = new List<int>();
+            List<int> ouvertsNonTries = new List<int>();
             for (int i = 0; i < nbreNoeuds; i++)
             {
-                if ((matrice[noeudInit, i] != -1)&&(!ouverts.Contains(i)) && (!fermes.Contains(i)))      // si il y a un lien entre ces deux noeuds et s'il n'est pas dans les ouverts ni dans les fermés
-                    fermesNonTries.Add(i);                                                                       // on rajoute ce noeud aux fermés
+                if ((matrice[noeudInit, i] != -1)&&(!fermes.Contains(i)) && (!ouverts.Contains(i)))      // si il y a un lien entre ces deux noeuds et s'il n'est pas dans les fermes ni dans les fermés
+                    ouvertsNonTries.Add(i);                                                                       // on rajoute ce noeud aux fermés
             }
             // On les trie par ordre croissant de valeur d'arc
             int j = 0;
             int placeNoeudTest = 0;
-            while (j < fermesNonTries.Count)
+            while (j < ouvertsNonTries.Count)
             {
-                int noeudTest = fermesNonTries[j];
-                for (int i = j; i < fermesNonTries.Count; i++)
+                int noeudTest = ouvertsNonTries[j];
+                for (int i = j; i < ouvertsNonTries.Count; i++)
                 {
-                    if (matrice[noeudInit, fermesNonTries[i]] < matrice[noeudInit, noeudTest])
+                    if (matrice[noeudInit, ouvertsNonTries[i]] < matrice[noeudInit, noeudTest])
                     {
-                        int test = fermesNonTries[i];
-                        fermesNonTries[i] = fermesNonTries[placeNoeudTest];
-                        fermesNonTries[placeNoeudTest] = test;
+                        int test = ouvertsNonTries[i];
+                        ouvertsNonTries[i] = ouvertsNonTries[placeNoeudTest];
+                        ouvertsNonTries[placeNoeudTest] = test;
                         placeNoeudTest = i;
                     }
                 }
                 j++;
             }
             // On remet en première position dans la liste des fermés
-            fermes = new List<int>();
-            for (int i = 0; i < fermesNonTries.Count; i++)
-                fermes.Add(fermesNonTries[i]);
+            ouverts = new List<int>();
+            for (int i = 0; i < ouvertsNonTries.Count; i++)
+                ouverts.Add(ouvertsNonTries[i]);
             // On rajoute les noeuds qu'il y avait après le noeud que l'on vient d'étudier
-            for (int i = 0; i < fermesAnciens.Count; i++)
-                fermes.Add(fermesAnciens[i]);
+            for (int i = 0; i < ouvertsAnciens.Count; i++)
+                ouverts.Add(ouvertsAnciens[i]);
             // On l'affiche dans la textbox
-            solutionFerme_textBox.Text += "{";
-            for (int i = 0; i < fermes.Count; i++)
-                solutionFerme_textBox.Text += Convert.ToString(fermes[i]);
-            solutionFerme_textBox.Text += "}\r\n";
+            AfficherListes(solutionOuvert_textBox1, ouverts);
         }
-        protected void AfficherOuverts()
+        protected void AfficherListes(TextBox tB, List<int> liste)
         {
-            solutionOuvert_textBox.Text += "{";
-            for (int i = 0; i < ouverts.Count; i++)
-                solutionOuvert_textBox.Text += Convert.ToString(ouverts[i]);
-            solutionOuvert_textBox.Text += "}\r\n";
+            tB.Text += "{";
+            for (int i = 0; i < liste.Count; i++)
+                tB.Text += Convert.ToString(liste[i]);
+            tB.Text += "}\r\n";
         }
         protected string NettoyerChaine(string chaine)
         {
@@ -228,10 +225,11 @@ namespace Partie2
                 chaine += chaineNettoyee[i];
             return chaine;
         }
-        protected void CorrectionChaine(string utilisateur, string solution, bool correct, TextBox txtbox)
+        protected bool CorrectionChaine(string utilisateur, string solution, TextBox txtbox)
         {
             string utilisateurNettoye = NettoyerChaine(utilisateur);
             string solutionNettoyer = NettoyerChaine(solution);
+            bool correct;
 
             // On teste ensuite ces chaines entre elles, si elles ne sont pas identiques, alors l'utilisateur a eu faux.
             if (utilisateurNettoye != solutionNettoyer)
@@ -244,7 +242,7 @@ namespace Partie2
                 correct = true;
                 txtbox.Text += "\r\n  Bonne réponse !";
             }
+            return correct;
         }
-
     }
 }
